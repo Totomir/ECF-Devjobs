@@ -1,0 +1,12 @@
+<svg id="officelite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="20" viewBox="0 0 30 20">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Oval_4" data-name="Oval 4" cx="10" cy="10" r="10" fill="#5175ff"/>
+    </clipPath>
+  </defs>
+  <circle id="Oval_1" data-name="Oval 1" cx="10" cy="10" r="10" transform="translate(10)" fill="#5175ff"/>
+  <circle id="Oval_2" data-name="Oval 2" cx="10" cy="10" r="10" fill="#5175ff"/>
+  <g id="Mask" clip-path="url(#clip-path)">
+    <circle id="Oval_3" data-name="Oval 3" cx="10" cy="10" r="10" transform="translate(10)" fill="#b4c4ff" opacity="0.324"/>
+  </g>
+</svg>
