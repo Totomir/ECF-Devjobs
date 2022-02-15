@@ -1,0 +1,126 @@
+/* kumbh-sans-regular - latin */
+@font-face {
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.svg#KumbhSans")
+      format("svg"); /* Legacy iOS */
+}
+
+* {
+  font-family: "Kumbh Sans";
+}
+
+/* HEADER */
+
+header {
+  min-height: 13.6rem;
+  display: flex;
+  justify-content: space-between;
+  background-image: url("../images/mobile-background-light.svg");
+  padding: 3rem;
+}
+
+.light-switch {
+  max-height: 2.4rem;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+/* Création du switch et de son mouvement */
+.switch {
+  width: 4.8rem;
+  height: 2.4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.switch input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  height: 1.4rem;
+  width: 1.4rem;
+  left: 5px;
+  bottom: 5px;
+  background-color: #5964e0;
+  content: "";
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  transform: translateX(23px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Search Bar */
+
+.search-bar {
+  max-width: 33rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.6rem;
+  background-color: black;
+  border-radius: 4px;
+}
+
+.search-bar input + img {
+  margin: 1rem;
+}
+
+.search-button {
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 1.2rem;
+  background-color: #5964e0;
+  background-image: url("../images/mobile-icon-search.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 4px;
+}
+/* Main */
+
+main {
+  background-color: #f4f6f8;
+}

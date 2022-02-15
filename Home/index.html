@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Template_CSS/reset.css" />
-    <link rel="stylesheet" href="../Template_CSS/helpers.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/helpers.css" />
+    <link rel="stylesheet" href="style/style.css" />
     <title>ECF Front-End</title>
   </head>
   <body>
@@ -25,29 +25,12 @@
       </nav>
     </header>
     <section class="container">
-      <nav class="search-bar">
-        <div class="search-by-title">
-          <img
-            src="images/icon-search.svg"
-            alt="Search icon for search bar by title, companies, expertise..."
-          />
-          <input type="text" />
-        </div>
-        <div class="search-by-location">
-          <img
-            src="images/icon-location.svg"
-            alt="Location icon for search by location"
-          />
-          <input type="text" />
-        </div>
-        <div class="fulltime-option">
-          <input type="checkbox" />
-          <p>Full Time Only</p>
-        </div>
-        <div class="search-button">
-          <input type="submit" value="Search" />
-        </div>
-      </nav>
+      <form class="search-bar">
+        <!-- Rajouter label qui devra être caché (accessibilité) -->
+        <input type="text" placeholder="Filter by title..." />
+        <img src="images/mobile-filter-icon.svg" alt="Filter icon" />
+        <input class="search-button" type="submit" value="" />
+      </form>
       <main>
         <!-- Trouver un moyen de faciliter la création de contenue en automatisant les éléments récurrents -->
         <div class="job-card">
