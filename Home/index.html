@@ -27,112 +27,101 @@
     <section class="container">
       <form class="search-bar">
         <!-- Rajouter label qui devra être caché (accessibilité) -->
-        <input type="text" placeholder="Filter by title..." />
+        <input
+          class="search-tab"
+          type="text"
+          placeholder="Filter by title..."
+        />
         <img src="images/mobile-filter-icon.svg" alt="Filter icon" />
         <input class="search-button" type="submit" value="" />
       </form>
       <main>
         <!-- Trouver un moyen de faciliter la création de contenue en automatisant les éléments récurrents -->
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/scoot.svg" alt="Scoot's logo" />
-          </figure>
+          <figure class="announcement-logo scoot-logo"></figure>
           <div class="announcement-details">5h ago • Full Time</div>
           <div class="announcement-title">Senior Software Engineer</div>
-          <div class="annoucement-author">Scoot</div>
-          <div class="annoucement-location">United Kingdom</div>
+          <div class="announcement-author">Scoot</div>
+          <div class="announcement-location">United Kingdom</div>
         </div>
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/blogr.svg" alt="Blogr's logo" />
-          </figure>
+          <figure class="announcement-logo blogr-logo"></figure>
           <div class="announcement-details">20h ago • Part Time</div>
           <div class="announcement-title">Haskell and PureScript Dev</div>
-          <div class="annoucement-author">Blogr</div>
-          <div class="annoucement-location">United States</div>
+          <div class="announcement-author">Blogr</div>
+          <div class="announcement-location">United States</div>
         </div>
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/officelite.svg" alt="Office Lite's logo" />
-          </figure>
+          <figure class="announcement-logo vector-logo"></figure>
+          <div class="announcement-details">1d ago • Part Time</div>
+          <div class="announcement-title">Midlevel Back End Engineer</div>
+          <div class="announcement-author">Vector</div>
+          <div class="announcement-location">Russia</div>
+        </div>
+        <div class="job-card">
+          <figure class="announcement-logo"></figure>
           <div class="announcement-details">2d ago • Full Time</div>
           <div class="announcement-title">Senior Application Engineer</div>
-          <div class="annoucement-author">Office Lite</div>
-          <div class="annoucement-location">Japan</div>
+          <div class="announcement-author">Office Lite</div>
+          <div class="announcement-location">Japan</div>
         </div>
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/pod.svg" alt="Pod's logo" />
-          </figure>
+          <figure class="announcement-logo"></figure>
           <div class="announcement-details">2d ago • Part Time</div>
           <div class="announcement-title">Remote DevOps Engineer</div>
-          <div class="annoucement-author">Pod</div>
-          <div class="annoucement-location">Thailand</div>
+          <div class="announcement-author">Pod</div>
+          <div class="announcement-location">Thailand</div>
         </div>
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/creative.svg" alt="Creative's logo" />
-          </figure>
+          <figure class="announcement-logo"></figure>
           <div class="announcement-details">4d ago • Part Time</div>
           <div class="announcement-title">Desktop Support Manager</div>
-          <div class="annoucement-author">Creative</div>
-          <div class="annoucement-location">Germany</div>
+          <div class="announcement-author">Creative</div>
+          <div class="announcement-location">Germany</div>
         </div>
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/pomodoro.svg" alt="Pomodoro's logo" />
-          </figure>
+          <figure class="announcement-logo"></figure>
           <div class="announcement-details">1w ago • Full Time</div>
           <div class="announcement-title">iOS Engineer</div>
-          <div class="annoucement-author">Pomodoro</div>
-          <div class="annoucement-location">United States</div>
+          <div class="announcement-author">Pomodoro</div>
+          <div class="announcement-location">United States</div>
         </div>
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/maker.svg" alt="Maker's logo" />
-          </figure>
+          <figure class="announcement-logo"></figure>
           <div class="announcement-details">1w ago • Full Time</div>
           <div class="announcement-title">Senior EJB Developer</div>
-          <div class="annoucement-author">Maker</div>
-          <div class="annoucement-location">United Kingdom</div>
+          <div class="announcement-author">Maker</div>
+          <div class="announcement-location">United Kingdom</div>
         </div>
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/coffeeroasters.svg" alt="Coffeeroasters's logo" />
-          </figure>
+          <figure class="announcement-logo"></figure>
           <div class="announcement-details">1w ago • Part Time</div>
           <div class="announcement-title">Senior Frontend Developer</div>
-          <div class="annoucement-author">Coffeeroasters</div>
-          <div class="annoucement-location">Singapore</div>
+          <div class="announcement-author">Coffeeroasters</div>
+          <div class="announcement-location">Singapore</div>
         </div>
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/mastercraft.svg" alt="Mastercraft's logo" />
-          </figure>
+          <figure class="announcement-logo"></figure>
           <div class="announcement-details">2w ago • Freelance</div>
           <div class="announcement-title">App & Website Designer</div>
-          <div class="annoucement-author">Mastercraft</div>
-          <div class="annoucement-location">United States</div>
+          <div class="announcement-author">Mastercraft</div>
+          <div class="announcement-location">United States</div>
         </div>
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/crowdfund.svg" alt="Crowdfund's logo" />
-          </figure>
+          <figure class="announcement-logo"></figure>
           <div class="announcement-details">1mo ago • Part Time</div>
           <div class="announcement-title">Fullstack Developer</div>
-          <div class="annoucement-author">Crowdfund</div>
-          <div class="annoucement-location">New Zealand</div>
+          <div class="announcement-author">Crowdfund</div>
+          <div class="announcement-location">New Zealand</div>
         </div>
         <div class="job-card">
-          <figure class="announcement-logo">
-            <img src="images/typemaster.svg" alt="Typemaster's logo" />
-          </figure>
+          <figure class="announcement-logo"></figure>
           <div class="announcement-details">1mo ago • Part Time</div>
           <div class="announcement-title">Technical Lead Engineer</div>
-          <div class="annoucement-author">Typemaster</div>
-          <div class="annoucement-location">United Kingdom</div>
+          <div class="announcement-author">Typemaster</div>
+          <div class="announcement-location">United Kingdom</div>
         </div>
-        <button type="submit">Load More</button>
+        <button class="submit-button" type="submit">Load More</button>
       </main>
     </section>
   </body>

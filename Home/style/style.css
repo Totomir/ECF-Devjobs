@@ -21,17 +21,56 @@
       format("svg"); /* Legacy iOS */
 }
 
+/* kumbh-sans-700 - latin */
+@font-face {
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.svg#KumbhSans")
+      format("svg"); /* Legacy iOS */
+}
+
+/* Typographie */
+
 * {
   font-family: "Kumbh Sans";
+}
+
+body {
+  background-color: #f4f6f8;
+}
+
+/* Container */
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* HEADER */
 
 header {
   min-height: 13.6rem;
+  position: relative;
   display: flex;
   justify-content: space-between;
   background-image: url("../images/mobile-background-light.svg");
+  margin-bottom: 9rem;
   padding: 3rem;
 }
 
@@ -95,17 +134,24 @@ input:checked + .slider:before {
 /* Search Bar */
 
 .search-bar {
-  max-width: 33rem;
+  position: absolute;
+  top: 9.5rem;
+  left: 2rem;
   display: flex;
   margin-left: auto;
   margin-right: auto;
   padding: 1.6rem;
-  background-color: black;
+  background-color: white;
   border-radius: 4px;
 }
 
 .search-bar input + img {
-  margin: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.search-tab {
+  border: none;
 }
 
 .search-button {
@@ -122,5 +168,74 @@ input:checked + .slider:before {
 /* Main */
 
 main {
-  background-color: #f4f6f8;
+  display: grid;
+  grid-gap: 5rem;
+  justify-items: center;
+}
+
+.job-card {
+  position: relative;
+  min-width: 32rem;
+  background-color: white;
+  border-radius: 5px;
+  padding: 3rem;
+}
+
+.announcement-logo {
+  position: absolute;
+  top: -2.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 15px;
+}
+
+.scoot-logo {
+  background-image: url("../images/scoot.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e99210;
+}
+
+.blogr-logo {
+  background-image: url("../images/blogr.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e54d25;
+}
+
+.vector-logo {
+  background-image: url("../images/vector.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #34353f;
+}
+
+.announcement-details {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  color: darkgrey;
+}
+
+.announcement-title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.announcement-author {
+  margin-bottom: 3rem;
+  font-size: 16px;
+  color: darkgrey;
+}
+
+.announcement-location {
+  font-weight: 700;
+  font-size: 14px;
+  color: #5964e0;
+}
+
+.submit-button {
+  max-width: 14rem;
+  background-color: #5964e0;
 }
