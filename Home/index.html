@@ -27,16 +27,19 @@
     <section class="container">
       <form class="search-bar">
         <!-- Rajouter label qui devra être caché (accessibilité) -->
-        <div class="search-icon">
-          <img src="images/icon-search.svg" alt="Search icon" />
+        <div class="search-zone">
+          <div class="search-icon">
+            <img src="images/icon-search.svg" alt="Search icon" />
+          </div>
+          <input
+            class="search-tab"
+            type="text"
+            placeholder="Filter by title..."
+          />
         </div>
-        <input
-          class="search-tab"
-          type="text"
-          placeholder="Filter by title..."
-        />
         <div class="vertical"></div>
-        <img
+        <div class="search-zone">
+          <img
           src="images/icon-location.svg"
           alt="Location icon"
           class="location-img"
@@ -46,10 +49,13 @@
           type="text"
           placeholder="Filter by location..."
         />
+        </div>
         <div class="vertical"></div>
-        <div class="time-option">
-          <input class="popup-checkbox" type="checkbox" />
-          <p class="popup-option">Full Time</p>
+        <div class="search-zone">
+          <div class="time-option">
+            <input class="popup-checkbox" type="checkbox" />
+            <p class="popup-option">Full Time</p>
+          </div>
         </div>
         <a href="#popupSearch" class="filter-option">
           <img src="images/mobile-filter-icon.svg" alt="Filter icon" />
