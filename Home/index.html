@@ -15,26 +15,72 @@
         <img src="images/logo.svg" alt="Devjobs logo" />
       </figure>
       <!-- Voir si nav est bien adapté pour le toggle switch -->
-      <nav class="light-switch">
+      <div class="light-switch">
         <img src="images/sun.svg" alt="Sun icon for switch in light mode" />
         <label class="switch">
           <input type="checkbox" />
           <span class="slider round"></span>
         </label>
         <img src="images/moon.svg" alt="Moon icon for switch in dark mode" />
-      </nav>
+      </div>
     </header>
     <section class="container">
       <form class="search-bar">
         <!-- Rajouter label qui devra être caché (accessibilité) -->
+        <div class="search-icon">
+          <img src="images/icon-search.svg" alt="Search icon" />
+        </div>
         <input
           class="search-tab"
           type="text"
           placeholder="Filter by title..."
         />
-        <img src="images/mobile-filter-icon.svg" alt="Filter icon" />
-        <input class="search-button" type="submit" value="" />
+        <div class="vertical"></div>
+        <img
+          src="images/icon-location.svg"
+          alt="Location icon"
+          class="location-img"
+        />
+        <input
+          class="search-by-location"
+          type="text"
+          placeholder="Filter by location..."
+        />
+        <div class="vertical"></div>
+        <div class="time-option">
+          <input class="popup-checkbox" type="checkbox" />
+          <p class="popup-option">Full Time</p>
+        </div>
+        <a href="#popupSearch" class="filter-option">
+          <img src="images/mobile-filter-icon.svg" alt="Filter icon" />
+        </a>
+        <input class="search-button" type="submit" value="Search" />
       </form>
+
+      <!-- Overlay voir W3school pour le faire avec JS -->
+      <nav class="popup-search" id="popupSearch">
+        <div class="popup-search-block">
+          <div class="filter-location">
+            <img
+              class="location-search"
+              src="images/icon-location.svg"
+              alt="icon-location"
+            />
+            <input
+              class="popup-search-tab"
+              type="text"
+              placeholder="Filter by location..."
+            />
+          </div>
+          <hr />
+          <div class="full-time-option">
+            <input class="popup-checkbox" type="checkbox" />
+            <p class="popup-option">Full Time Only</p>
+          </div>
+          <input class="popup-search-button" type="submit" value="Search" />
+        </div>
+      </nav>
+
       <main>
         <!-- Trouver un moyen de faciliter la création de contenue en automatisant les éléments récurrents -->
         <div class="job-card">

@@ -70,7 +70,7 @@ header {
   display: flex;
   justify-content: space-between;
   background-image: url("../images/mobile-background-light.svg");
-  margin-bottom: 9rem;
+  margin-bottom: 9.5rem;
   padding: 3rem;
 }
 
@@ -81,6 +81,16 @@ header {
   align-items: center;
   justify-content: space-between;
   margin-top: 0.25rem;
+}
+
+@media screen and (min-width: 48em) {
+  header {
+    min-height: 16rem;
+    margin-bottom: 11rem;
+    background-image: url("../images/background.svg");
+    background-size:cover;
+    background-repeat: no-repeat;
+  }
 }
 
 /* Création du switch et de son mouvement */
@@ -134,10 +144,11 @@ input:checked + .slider:before {
 /* Search Bar */
 
 .search-bar {
+  width: 90%;
   position: absolute;
   top: 9.5rem;
-  left: 2rem;
   display: flex;
+  justify-content: space-around;
   margin-left: auto;
   margin-right: auto;
   padding: 1.6rem;
@@ -145,26 +156,164 @@ input:checked + .slider:before {
   border-radius: 4px;
 }
 
-.search-bar input + img {
-  margin-left: 1.5rem;
+.search-icon {
+  display: flex;
+  justify-items: center;
+  margin-left: 0.8rem;
+}
+
+.search-bar input + a {
   margin-right: 1.5rem;
 }
 
+.filter-option {
+  display: flex;
+  justify-content: center;
+}
+
 .search-tab {
+  max-width: 12rem;
   border: none;
+  font-size: 18px;
+}
+
+.search-by-location {
+  max-width: 16rem;
+  border: none;
+  font-size: 18px;
+}
+
+.time-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical {
+  margin: -1.6rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border: solid 1px #f4f6f8;
 }
 
 .search-button {
-  width: 4.8rem;
-  height: 4.8rem;
-  padding: 1.2rem;
-  background-color: #5964e0;
-  background-image: url("../images/mobile-icon-search.svg");
-  background-position: center;
-  background-repeat: no-repeat;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  background-color: #5964e0;
+  padding: 1.7rem 1.4rem 1.1rem 1.4rem;
+  color: white;
 }
+
+@media screen and (max-width: 48em) {
+  .vertical {
+    display: none;
+  }
+
+  .search-icon {
+    display: none;
+  }
+
+  .time-option {
+    display: none;
+  }
+
+  .search-by-location {
+    display: none;
+  }
+
+  .location-img {
+    display: none;
+  }
+
+  .search-button {
+    width: 4.8rem;
+    height: 4.8rem;
+    padding: 1.2rem;
+    background-color: #5964e0;
+    background-image: url("../images/mobile-icon-search.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 4px;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .filter-option {
+    visibility: hidden;
+  }
+
+  .search-bar {
+    top: 11.5rem;
+  }
+}
+
+.popup-search {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.popup-search:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-search-block {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.filter-location {
+  display: flex;
+}
+
+.location-search {
+  size: 2rem;
+  margin: 2rem;
+}
+
+.popup-search-tab {
+  border: none;
+}
+
+.full-time-option {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+.popup-checkbox {
+  height: 2.4rem;
+  width: 2.4rem;
+  margin-right: 1em;
+  background-color: #19202d;
+  border: none;
+  border-radius: 3px;
+}
+.popup-search-button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.4rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #5964e0;
+  padding: 1rem 12rem;
+  color: white;
+}
+
 /* Main */
 
 main {
@@ -173,9 +322,26 @@ main {
   justify-items: center;
 }
 
+@media screen and (min-width: 48em) {
+  main {
+    grid-template-columns: 50% 50%;
+    column-gap: 1rem;
+    row-gap: 6.5rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  main {
+    grid-template-columns: 33% 33% 33%;
+    column-gap: 3rem;
+    row-gap: 6.5rem;
+  }
+}
+
+
 .job-card {
   position: relative;
-  min-width: 32rem;
+  min-width: 100%;
   background-color: white;
   border-radius: 5px;
   padding: 3rem;
@@ -236,6 +402,13 @@ main {
 }
 
 .submit-button {
-  max-width: 14rem;
+  margin-bottom: 6rem;
+  padding: 1rem 3rem;
   background-color: #5964e0;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  color: white;
 }
+
+/* Revoir la font weight si on peut pas la mettre dans la family */
