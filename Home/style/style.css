@@ -159,7 +159,8 @@ input:checked + .slider:before {
 .search-icon {
   display: flex;
   justify-items: center;
-  margin-left: 0.8rem;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
 }
 
 .search-bar input + a {
@@ -177,6 +178,10 @@ input:checked + .slider:before {
   font-size: 18px;
 }
 
+.location-img {
+  margin-right: 1rem;
+}
+
 .search-by-location {
   max-width: 16rem;
   border: none;
@@ -187,6 +192,7 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
 }
 
 .vertical {
@@ -320,6 +326,7 @@ main {
   display: grid;
   grid-gap: 5rem;
   justify-items: center;
+  margin-bottom: 5.5rem;
 }
 
 @media screen and (min-width: 48em) {
@@ -401,7 +408,14 @@ main {
   color: #5964e0;
 }
 
-.submit-button {
+.loading-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.load-button {
+  justify-content: center;
   margin-bottom: 6rem;
   padding: 1rem 3rem;
   background-color: #5964e0;
