@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style/card.css" />
     <link rel="stylesheet" href="style/footer.css" />
     <link rel="stylesheet" href="style/style.css" />
-    <script src="js/index.js"></script>
     <title>ECF Front-End</title>
   </head>
   <body>
@@ -30,7 +29,7 @@
       </div>
     </header>
     <section class="container">
-      <form class="search-bar">
+      <form class="search-bar" id="searchBar">
         <!-- Rajouter label qui devra être caché (accessibilité) -->
         <div class="search-zone">
           <div class="search-icon">
@@ -38,6 +37,7 @@
           </div>
           <input
             class="search-tab"
+            id="searchTab"
             type="text"
             placeholder="Filter by title, companies, expertise..."
           />
@@ -51,6 +51,7 @@
           />
           <input
             class="search-by-location"
+            id="searchByLocation"
             type="text"
             placeholder="Filter by location..."
           />
@@ -183,5 +184,6 @@
         <button class="load-button" type="submit">Load More</button>
       </div>
     </section>
+    <script src="js/index.js"></script>
   </body>
 </html>
