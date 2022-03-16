@@ -1,0 +1,122 @@
+/* HEADER */
+
+header {
+  min-height: 13.6rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-image: url("../images/mobile-background-light.svg");
+  margin-bottom: 9.5rem;
+  padding: 3rem;
+}
+
+.light-switch {
+  max-height: 2.4rem;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+/* Tout écran au dessus de 768px */
+@media screen and (min-width: 48em) {
+  header {
+    min-height: 16rem;
+    margin-bottom: 11rem;
+    background-image: url("../images/background.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .devjobs {
+    margin-left: 1rem;
+  }
+}
+
+/* Tout écran au dessus de 1024px */
+@media screen and (min-width: 64em) {
+  .devjobs {
+    margin-left: 2rem;
+  }
+}
+
+/* Tout écran au dessus de 1440px */
+@media screen and (min-width: 90em) {
+  .devjobs {
+    margin-left: 4rem;
+  }
+}
+
+/* Création du switch et de son mouvement */
+.switch {
+  width: 4.8rem;
+  height: 2.4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.switch input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  height: 1.4rem;
+  width: 1.4rem;
+  left: 5px;
+  bottom: 5px;
+  background-color: #5964e0;
+  content: "";
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  transform: translateX(23px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider.round:hover::before {
+  background-color: #939bf4;
+}
+
+/* Tout écran au dessus de 768px */
+@media screen and (min-width: 48em) {
+  .light-switch {
+    margin-right: 1rem;
+  }
+}
+
+/* Tout écran au dessus de 1024px */
+@media screen and (min-width: 64em) {
+  .light-switch {
+    margin-right: 2rem;
+  }
+}
+
+/* Tout écran au dessus de 1440px */
+@media screen and (min-width: 90em) {
+  .light-switch {
+    margin-right: 4rem;
+  }
+}

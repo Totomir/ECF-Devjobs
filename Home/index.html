@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/reset.css" />
     <link rel="stylesheet" href="style/helpers.css" />
+    <link rel="stylesheet" href="style/header.css" />
+    <link rel="stylesheet" href="style/search_bar.css" />
+    <link rel="stylesheet" href="style/card.css" />
+    <link rel="stylesheet" href="style/footer.css" />
     <link rel="stylesheet" href="style/style.css" />
+    <script src="js/index.js"></script>
     <title>ECF Front-End</title>
   </head>
   <body>
@@ -18,7 +23,7 @@
       <div class="light-switch">
         <img src="images/sun.svg" alt="Sun icon for switch in light mode" />
         <label class="switch">
-          <input type="checkbox" />
+          <input type="checkbox" id="lightSwitch" />
           <span class="slider round"></span>
         </label>
         <img src="images/moon.svg" alt="Moon icon for switch in dark mode" />
@@ -34,27 +39,27 @@
           <input
             class="search-tab"
             type="text"
-            placeholder="Filter by title..."
+            placeholder="Filter by title, companies, expertise..."
           />
         </div>
         <div class="vertical"></div>
         <div class="search-zone">
           <img
-          src="images/icon-location.svg"
-          alt="Location icon"
-          class="location-img"
-        />
-        <input
-          class="search-by-location"
-          type="text"
-          placeholder="Filter by location..."
-        />
+            src="images/icon-location.svg"
+            alt="Location icon"
+            class="location-img"
+          />
+          <input
+            class="search-by-location"
+            type="text"
+            placeholder="Filter by location..."
+          />
         </div>
         <div class="vertical"></div>
         <div class="search-zone">
           <div class="time-option">
             <input class="popup-checkbox" type="checkbox" />
-            <p class="popup-option">Full Time</p>
+            <p class="popup-option">Full Time Only</p>
           </div>
         </div>
         <a href="#popupSearch" class="filter-option">

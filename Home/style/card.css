@@ -1,0 +1,71 @@
+/* CARDS */
+
+.job-card {
+  position: relative;
+  min-width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 3rem;
+}
+
+.job-card-black {
+  background-color: #19202d;
+}
+
+.announcement-title-black {
+  color: white;
+}
+
+.announcement-logo {
+  position: absolute;
+  top: -2.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 15px;
+}
+
+.scoot-logo {
+  background-image: url("../images/scoot.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e99210;
+}
+
+.blogr-logo {
+  background-image: url("../images/blogr.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e54d25;
+}
+
+.vector-logo {
+  background-image: url("../images/vector.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #34353f;
+}
+
+.announcement-details {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  color: darkgrey;
+}
+
+.announcement-title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.announcement-author {
+  margin-bottom: 3rem;
+  font-size: 16px;
+  color: darkgrey;
+}
+
+.announcement-location {
+  font-weight: 700;
+  font-size: 14px;
+  color: #5964e0;
+}
