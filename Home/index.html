@@ -21,7 +21,7 @@
       <!-- Voir si nav est bien adapté pour le toggle switch -->
       <div class="light-switch">
         <img src="images/sun.svg" alt="Sun icon for switch in light mode" />
-        <label class="switch">
+        <label class="switch" for="lightSwitch">
           <input type="checkbox" id="lightSwitch" />
           <span class="slider round"></span>
         </label>
@@ -30,8 +30,7 @@
     </header>
     <section class="container">
       <form class="search-bar" id="searchBar">
-        <!-- Rajouter label qui devra être caché (accessibilité) -->
-        <div class="search-zone">
+        <label class="search-zone" for="searchTab">
           <div class="search-icon">
             <img src="images/icon-search.svg" alt="Search icon" />
           </div>
@@ -41,9 +40,9 @@
             type="text"
             placeholder="Filter by title, companies, expertise..."
           />
-        </div>
+        </label>
         <div class="vertical"></div>
-        <div class="search-zone">
+        <label class="search-zone" for="searchByLocation">
           <img
             src="images/icon-location.svg"
             alt="Location icon"
@@ -55,24 +54,24 @@
             type="text"
             placeholder="Filter by location..."
           />
-        </div>
+        </label>
         <div class="vertical"></div>
-        <div class="search-zone">
-          <div class="time-option">
-            <input class="popup-checkbox" type="checkbox" />
-            <p class="popup-option">Full Time Only</p>
-          </div>
-        </div>
+        <label class="time-option" for="timeOption">
+          <input class="popup-checkbox" type="checkbox" id="timeOption" />
+          <p class="popup-option">Full Time Only</p>
+        </label>
         <a href="#popupSearch" class="filter-option">
           <img src="images/mobile-filter-icon.svg" alt="Filter icon" />
         </a>
-        <input class="search-button" type="submit" value="Search" />
+        <button class="search-button" id="searchButton" type="submit">
+          <span class="search">Search</span>
+        </button>
       </form>
 
       <!-- Overlay voir W3school pour le faire avec JS -->
-      <nav class="popup-search" id="popupSearch">
+      <div class="popup-search" id="popupSearch">
         <div class="popup-search-block">
-          <div class="filter-location">
+          <label class="filter-location" for="locationSearch">
             <img
               class="location-search"
               src="images/icon-location.svg"
@@ -82,16 +81,17 @@
               class="popup-search-tab"
               type="text"
               placeholder="Filter by location..."
+              id="locationSearch"
             />
-          </div>
+          </label>
           <hr />
-          <div class="full-time-option">
-            <input class="popup-checkbox" type="checkbox" />
+          <label class="full-time-option" for="fullTimeOption">
+            <input class="popup-checkbox" type="checkbox" id="fullTimeOption" />
             <p class="popup-option">Full Time Only</p>
-          </div>
-          <input class="popup-search-button" type="submit" value="Search" />
+          </label>
+          <button class="popup-search-button" type="submit">Search</button>
         </div>
-      </nav>
+      </div>
 
       <main>
         <!-- Trouver un moyen de faciliter la création de contenue en automatisant les éléments récurrents -->
