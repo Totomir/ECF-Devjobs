@@ -5,6 +5,7 @@ header {
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   background-image: url("../images/mobile-background-light.svg");
   margin-bottom: 9.5rem;
   padding: 3rem;

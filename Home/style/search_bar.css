@@ -27,6 +27,7 @@
 }
 
 .search-icon {
+  width: 2.6rem;
   display: flex;
   justify-items: center;
   margin-left: 0.5rem;
@@ -36,6 +37,11 @@
 .filter-option {
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  visibility: hidden;
 }
 
 .search-tab {
@@ -96,7 +102,10 @@
 }
 
 /* Tout écran en dessous de 768px */
-@media screen and (max-width: 48em) {
+@media screen and (max-width: 767px) {
+  .filter-option {
+    visibility: visible;
+  }
   .vertical {
     display: none;
   }
@@ -135,10 +144,6 @@
 
 /* Tout écran au dessus de 768px */
 @media screen and (min-width: 48em) {
-  .filter-option {
-    visibility: hidden;
-  }
-
   .search-bar {
     top: 11.5rem;
   }

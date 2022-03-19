@@ -15,10 +15,7 @@
   </head>
   <body>
     <header>
-      <figure class="devjobs">
-        <img src="images/logo.svg" alt="Devjobs logo" />
-      </figure>
-      <!-- Voir si nav est bien adapté pour le toggle switch -->
+      <img src="images/logo.svg" alt="Devjobs logo" class="devjobs" />
       <div class="light-switch">
         <img src="images/sun.svg" alt="Sun icon for switch in light mode" />
         <label class="switch" for="lightSwitch">
@@ -29,11 +26,14 @@
       </div>
     </header>
     <section class="container">
+      <!-- TODO revoir le bouton et les champs avec le responsive, voir mettre 3 div à la places des box qui s'empillent -->
       <form class="search-bar" id="searchBar">
         <label class="search-zone" for="searchTab">
-          <div class="search-icon">
-            <img src="images/icon-search.svg" alt="Search icon" />
-          </div>
+          <img
+            src="images/icon-search.svg"
+            alt="Search icon"
+            class="search-icon"
+          />
           <input
             class="search-tab"
             id="searchTab"
@@ -58,17 +58,18 @@
         <div class="vertical"></div>
         <label class="time-option" for="timeOption">
           <input class="popup-checkbox" type="checkbox" id="timeOption" />
-          <p class="popup-option">Full Time Only</p>
+          <p class="popup-option" id="popupOption">Full Time</p>
         </label>
-        <a href="#popupSearch" class="filter-option">
+        <button href="#popupSearch" class="filter-option">
           <img src="images/mobile-filter-icon.svg" alt="Filter icon" />
-        </a>
+        </button>
         <button class="search-button" id="searchButton" type="submit">
           <span class="search">Search</span>
         </button>
       </form>
 
       <!-- Overlay voir W3school pour le faire avec JS -->
+      <!-- TODO voir pour le scroll : class overflow hidden sur body -->
       <div class="popup-search" id="popupSearch">
         <div class="popup-search-block">
           <label class="filter-location" for="locationSearch">
@@ -95,90 +96,92 @@
 
       <main>
         <!-- Trouver un moyen de faciliter la création de contenue en automatisant les éléments récurrents -->
-        <div class="job-card">
-          <figure class="announcement-logo scoot-logo"></figure>
-          <div class="announcement-details">5h ago • Full Time</div>
-          <div class="announcement-title">Senior Software Engineer</div>
-          <div class="announcement-author">Scoot</div>
+        <!-- TODO mettre un article à la place de job-card -->
+        <article class="job-card">
+          <!-- TODO voir le focus within pour accessibilité -->
+          <img class="announcement-logo scoot-logo" />
+          <span class="announcement-details">5h ago • Full Time</span>
+          <h2 class="announcement-title">Senior Software Engineer</h2>
+          <span class="announcement-author">Scoot</span>
           <div class="announcement-location">United Kingdom</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo blogr-logo"></figure>
-          <div class="announcement-details">20h ago • Part Time</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo blogr-logo" />
+          <span class="announcement-details">20h ago • Part Time</span>
           <div class="announcement-title">Haskell and PureScript Dev</div>
-          <div class="announcement-author">Blogr</div>
+          <span class="announcement-author">Blogr</span>
           <div class="announcement-location">United States</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo vector-logo"></figure>
-          <div class="announcement-details">1d ago • Part Time</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo vector-logo" />
+          <span class="announcement-details">1d ago • Part Time</span>
           <div class="announcement-title">Midlevel Back End Engineer</div>
-          <div class="announcement-author">Vector</div>
+          <span class="announcement-author">Vector</span>
           <div class="announcement-location">Russia</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo"></figure>
-          <div class="announcement-details">2d ago • Full Time</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo" />
+          <span class="announcement-details">2d ago • Full Time</span>
           <div class="announcement-title">Senior Application Engineer</div>
-          <div class="announcement-author">Office Lite</div>
+          <span class="announcement-author">Office Lite</span>
           <div class="announcement-location">Japan</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo"></figure>
-          <div class="announcement-details">2d ago • Part Time</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo" />
+          <span class="announcement-details">2d ago • Part Time</span>
           <div class="announcement-title">Remote DevOps Engineer</div>
-          <div class="announcement-author">Pod</div>
+          <span class="announcement-author">Pod</span>
           <div class="announcement-location">Thailand</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo"></figure>
-          <div class="announcement-details">4d ago • Part Time</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo" />
+          <span class="announcement-details">4d ago • Part Time</span>
           <div class="announcement-title">Desktop Support Manager</div>
-          <div class="announcement-author">Creative</div>
+          <span class="announcement-author">Creative</span>
           <div class="announcement-location">Germany</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo"></figure>
-          <div class="announcement-details">1w ago • Full Time</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo" />
+          <span class="announcement-details">1w ago • Full Time</span>
           <div class="announcement-title">iOS Engineer</div>
-          <div class="announcement-author">Pomodoro</div>
+          <span class="announcement-author">Pomodoro</span>
           <div class="announcement-location">United States</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo"></figure>
-          <div class="announcement-details">1w ago • Full Time</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo" />
+          <span class="announcement-details">1w ago • Full Time</span>
           <div class="announcement-title">Senior EJB Developer</div>
-          <div class="announcement-author">Maker</div>
+          <span class="announcement-author">Maker</span>
           <div class="announcement-location">United Kingdom</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo"></figure>
-          <div class="announcement-details">1w ago • Part Time</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo" />
+          <span class="announcement-details">1w ago • Part Time</span>
           <div class="announcement-title">Senior Frontend Developer</div>
-          <div class="announcement-author">Coffeeroasters</div>
+          <span class="announcement-author">Coffeeroasters</span>
           <div class="announcement-location">Singapore</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo"></figure>
-          <div class="announcement-details">2w ago • Freelance</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo" />
+          <span class="announcement-details">2w ago • Freelance</span>
           <div class="announcement-title">App & Website Designer</div>
-          <div class="announcement-author">Mastercraft</div>
+          <span class="announcement-author">Mastercraft</span>
           <div class="announcement-location">United States</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo"></figure>
-          <div class="announcement-details">1mo ago • Part Time</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo" />
+          <span class="announcement-details">1mo ago • Part Time</span>
           <div class="announcement-title">Fullstack Developer</div>
-          <div class="announcement-author">Crowdfund</div>
+          <span class="announcement-author">Crowdfund</span>
           <div class="announcement-location">New Zealand</div>
-        </div>
-        <div class="job-card">
-          <figure class="announcement-logo"></figure>
-          <div class="announcement-details">1mo ago • Part Time</div>
+        </article>
+        <article class="job-card">
+          <img class="announcement-logo" />
+          <span class="announcement-details">1mo ago • Part Time</span>
           <div class="announcement-title">Technical Lead Engineer</div>
-          <div class="announcement-author">Typemaster</div>
+          <span class="announcement-author">Typemaster</span>
           <div class="announcement-location">United Kingdom</div>
-        </div>
+        </article>
       </main>
       <div class="loading-zone">
         <button class="load-button" type="submit">Load More</button>
