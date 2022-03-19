@@ -73,3 +73,17 @@ window.addEventListener("resize", function () {
     popupOption.textContent = "Full Time Only";
   }
 });
+
+// API récupération
+const request = new XMLHttpRequest();
+request.open("GET", "https://ecf-dwwm.cefim-formation.org/api/jobs");
+request.addEventListener("readystatechange", function () {
+  if (request.readyState === XMLHttpRequest.DONE) {
+    if (request.status === 200) {
+      const response = JSON.parse(request.responseText);
+      console.log(response);
+    }
+  }
+});
+
+request.send();

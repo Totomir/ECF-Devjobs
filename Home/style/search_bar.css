@@ -45,7 +45,7 @@
 }
 
 .search-tab {
-  max-width: 12rem;
+  width: 12rem;
   border: none;
   font-size: 18px;
 }
@@ -149,31 +149,39 @@
   }
 
   .search-tab {
-    max-width: 14rem;
+    width: 14rem;
   }
 }
 
 /* Tout écran au dessus de 1024px */
 @media screen and (min-width: 64em) {
   .search-tab {
-    margin-right: 5rem;
-    max-width: 21rem;
+    margin-right: 3rem;
+    width: 22rem;
   }
 
   .search-by-location {
-    margin-right: 4.5rem;
+    margin-right: 3rem;
+  }
+
+  .search-button {
+    width: 10rem;
   }
 }
 
 /* Tout écran au dessus de 1440px */
 @media screen and (min-width: 90em) {
   .search-tab {
-    margin-right: 21rem;
-    max-width: 21rem;
+    margin-right: 10rem;
+    width: 31rem;
   }
 
   .search-by-location {
     margin-right: 13rem;
+  }
+
+  .search-button {
+    width: 12.5rem;
   }
 }
 
