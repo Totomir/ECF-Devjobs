@@ -8,7 +8,7 @@ const searchByLocation = document.querySelector("#searchByLocation");
 const vertical = document.querySelector(".vertical");
 const searchButton = document.querySelector("#searchButton");
 const jobCard = document.querySelectorAll(".job-card");
-const announcementTitle = document.querySelectorAll(".announcement-title");
+const title = document.querySelectorAll(".announcement-title");
 const popupOption = document.querySelector("#popupOption");
 
 function switchThemeDark() {
@@ -20,7 +20,7 @@ function switchThemeDark() {
   jobCard.forEach((card) => {
     card.classList.add("job-card-black");
   });
-  announcementTitle.forEach((title) => {
+  title.forEach((title) => {
     title.classList.add("announcement-title-black");
   });
 }
@@ -34,7 +34,7 @@ function switchThemeLight() {
   jobCard.forEach((card) => {
     card.classList.remove("job-card-black");
   });
-  announcementTitle.forEach((title) => {
+  title.forEach((title) => {
     title.classList.remove("announcement-title-black");
   });
 }
@@ -74,16 +74,4 @@ window.addEventListener("resize", function () {
   }
 });
 
-// API récupération
-const request = new XMLHttpRequest();
-request.open("GET", "https://ecf-dwwm.cefim-formation.org/api/jobs");
-request.addEventListener("readystatechange", function () {
-  if (request.readyState === XMLHttpRequest.DONE) {
-    if (request.status === 200) {
-      const response = JSON.parse(request.responseText);
-      console.log(response);
-    }
-  }
-});
-
-request.send();
+// TODO : Tester le retour API, finir de construire le DOM

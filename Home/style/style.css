@@ -65,6 +65,388 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+/* HEADER */
+
+header {
+  min-height: 13.6rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-image: url("../images/mobile-background-light.svg");
+  margin-bottom: 9.5rem;
+  padding: 4rem 3rem 3rem 3rem;
+}
+
+.light-switch {
+  max-height: 2.4rem;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+/* Tout écran au dessus de 768px */
+@media screen and (min-width: 48em) {
+  header {
+    min-height: 16rem;
+    margin-bottom: 11rem;
+    background-image: url("../images/background.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .devjobs {
+    margin-left: 1rem;
+  }
+}
+
+/* Tout écran au dessus de 1024px */
+@media screen and (min-width: 64em) {
+  .devjobs {
+    margin-left: 2rem;
+  }
+}
+
+/* Tout écran au dessus de 1440px */
+@media screen and (min-width: 90em) {
+  .devjobs {
+    margin-left: 4rem;
+  }
+}
+
+/* Création du switch et de son mouvement */
+.switch {
+  width: 4.8rem;
+  height: 2.4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.switch input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  height: 1.4rem;
+  width: 1.4rem;
+  left: 5px;
+  bottom: 5px;
+  background-color: #5964e0;
+  content: "";
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  transform: translateX(23px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider.round:hover::before {
+  background-color: #939bf4;
+}
+
+/* Tout écran au dessus de 768px */
+@media screen and (min-width: 48em) {
+  .light-switch {
+    margin-right: 1rem;
+  }
+}
+
+/* Tout écran au dessus de 1024px */
+@media screen and (min-width: 64em) {
+  .light-switch {
+    margin-right: 2rem;
+  }
+}
+
+/* Tout écran au dessus de 1440px */
+@media screen and (min-width: 90em) {
+  .light-switch {
+    margin-right: 4rem;
+  }
+}
+
+/* SEARCH BAR */
+
+.search-bar {
+  width: 90%;
+  position: absolute;
+  top: 9.5rem;
+  display: flex;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.6rem;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.search-bar-black {
+  background-color: #19202d;
+}
+
+.search-zone {
+  display: flex;
+  justify-content: center;
+}
+
+.search-zone:hover {
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 2.6rem;
+  display: flex;
+  justify-items: center;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+}
+
+.filter-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  visibility: hidden;
+}
+
+.search-tab {
+  width: 12rem;
+  border: none;
+  font-size: 18px;
+}
+
+.search-tab-black {
+  background-color: #19202d;
+}
+
+.location-img {
+  width: 1.6rem;
+  margin-right: 1rem;
+}
+
+.search-by-location {
+  max-width: 16rem;
+  border: none;
+  font-size: 18px;
+}
+
+.search-by-location-black {
+  background-color: #19202d;
+}
+
+.time-option {
+  min-width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.vertical {
+  margin: -1.6rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border: solid 1px #f4f6f8;
+}
+
+.vertical-black {
+  border: 1px solid #6e8098;
+  background-color: #6e8098;
+}
+
+.search-button {
+  border: none;
+  border-radius: 5px;
+  background-color: #5964e0;
+  padding: 1.7rem 1.4rem 1.1rem 1.4rem;
+  color: white;
+}
+
+.search-button:hover {
+  background-color: #939bf4;
+}
+
+/* Tout écran en dessous de 768px */
+@media screen and (max-width: 767px) {
+  .filter-option {
+    visibility: visible;
+  }
+  .vertical {
+    display: none;
+  }
+
+  .search-icon {
+    display: none;
+  }
+
+  .time-option {
+    display: none;
+  }
+
+  .search-by-location {
+    display: none;
+  }
+
+  .location-img {
+    display: none;
+  }
+
+  .search-button {
+    width: 4.8rem;
+    height: 4.8rem;
+    padding: 1.2rem;
+    background-color: #5964e0;
+    background-image: url("../images/mobile-icon-search.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 4px;
+  }
+  .search {
+    display: none;
+  }
+}
+
+/* Tout écran au dessus de 768px */
+@media screen and (min-width: 48em) {
+  .search-bar {
+    top: 11.5rem;
+  }
+
+  .search-tab {
+    width: 14rem;
+  }
+}
+
+/* Tout écran au dessus de 1024px */
+@media screen and (min-width: 64em) {
+  .search-tab {
+    margin-right: 3rem;
+    width: 22rem;
+  }
+
+  .search-by-location {
+    margin-right: 3rem;
+  }
+
+  .search-button {
+    width: 10rem;
+  }
+}
+
+/* Tout écran au dessus de 1440px */
+@media screen and (min-width: 90em) {
+  .search-tab {
+    margin-right: 10rem;
+    width: 31rem;
+  }
+
+  .search-by-location {
+    margin-right: 13rem;
+  }
+
+  .search-button {
+    width: 12.5rem;
+  }
+}
+
+.popup-search {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.popup-search:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-search-block {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.filter-location {
+  display: flex;
+}
+
+.location-search {
+  size: 2rem;
+  margin: 2rem;
+}
+
+.popup-search-tab {
+  border: none;
+}
+
+.full-time-option {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+.popup-checkbox {
+  height: 2.4rem;
+  width: 2.4rem;
+  margin-right: 1em;
+  background-color: #19202d;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Ne fonctionne pas */
+.popup-checkbox-black {
+  background-color: #19202d;
+}
+
+.popup-search-button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.4rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #5964e0;
+  padding: 1rem 12rem;
+  color: white;
+}
 
 /* Main */
 
@@ -91,6 +473,68 @@ main {
     column-gap: 3rem;
     row-gap: 6.5rem;
   }
+}
+
+/* CARDS */
+
+.job-card {
+  position: relative;
+  min-width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 3rem;
+  padding-top: 5rem;
+}
+
+.job-card-black {
+  background-color: #19202d;
+}
+
+.announcement-title-black {
+  color: white;
+}
+
+.announcement-logo {
+  position: absolute;
+  top: -2.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 15px;
+  border: none;
+  background-color: #19202d;
+}
+
+.announcement-details {
+  font-size: 16px;
+  color: darkgrey;
+  display: flex;
+}
+
+.timestamp {
+  margin-right: 0.5rem;
+}
+
+.separate {
+  margin-right: 0.5rem;
+}
+
+.announcement-title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.announcement-author {
+  font-size: 16px;
+  color: darkgrey;
+}
+
+.announcement-location {
+  margin-top: 3rem;
+  font-weight: 700;
+  font-size: 14px;
+  color: #5964e0;
 }
 
 .loading-zone {
