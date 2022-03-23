@@ -9,6 +9,31 @@ function addCard({
   position,
   postedAt,
 }) {
+  function dateParution(postedAt) {
+    const date = new Date(postedAt);
+
+    const today = new Date();
+    const paruDepuis = today - date;
+
+    const heures = parseInt(paruDepuis / 3600000);
+    const jours = parseInt(paruDepuis / (3600000 * 24));
+    const semaines = parseInt(paruDepuis / (3600000 * 24 * 7));
+    const mois = parseInt(paruDepuis / (3600000 * 24 * 30));
+    const annee = parseInt(paruDepuis / (3600000 * 24 * 30 * 12));
+
+    if (heures < 24) {
+      timestamp.textContent = heures + "h ago";
+    } else if (heures >= 24 && jours < 7) {
+      timestamp.textContent = jours + "d ago";
+    } else if (jours >= 7 && semaines < 4) {
+      timestamp.textContent = semaines + "w ago";
+    } else if (semaines >= 4 && mois < 12) {
+      timestamp.textContent = mois + "mo ago";
+    } else {
+      timestamp.textContent = annee + "y ago";
+    }
+  }
+
   const card = document.createElement("article");
   card.classList.add("job-card");
 
@@ -25,7 +50,7 @@ function addCard({
 
   const timestamp = document.createElement("span");
   timestamp.classList.add("timestamp");
-  timestamp.textContent = postedAt;
+  dateParution(postedAt);
 
   const separator = document.createElement("p");
   separator.classList.add("separator");

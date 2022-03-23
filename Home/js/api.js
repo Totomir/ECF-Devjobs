@@ -7,10 +7,6 @@ function apiListCards(onSuccess = () => {}, onError = () => {}) {
       if (request.status === 200) {
         const response = JSON.parse(request.responseText);
         const jobs = response.jobs;
-
-        console.log(response);
-        console.log(jobs);
-
         onSuccess(response);
       } else {
         onError();

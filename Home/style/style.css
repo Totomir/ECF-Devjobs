@@ -235,6 +235,10 @@ input:checked + .slider:before {
   visibility: hidden;
 }
 
+.filter-option-black {
+  background-color: #19202d;
+}
+
 .search-tab {
   width: 12rem;
   border: none;
