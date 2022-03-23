@@ -12,10 +12,13 @@ function addCard({
   const card = document.createElement("article");
   card.classList.add("job-card");
 
-  const announcementLogo = document.createElement("img");
-  announcementLogo.classList.add("announcement-logo");
-  announcementLogo.src = "images" + logo;
-  announcementLogo.style.backgroundColor = logoBackground;
+  const logoContainer = document.createElement("div");
+  logoContainer.classList.add("announcement-logo");
+  logoContainer.style.backgroundColor = logoBackground;
+
+  const jobsLogo = document.createElement("img");
+  jobsLogo.classList.add("jobs-logo");
+  jobsLogo.src = "images" + logo;
 
   const announcementDetail = document.createElement("div");
   announcementDetail.classList.add("announcement-details");
@@ -44,8 +47,9 @@ function addCard({
   announcementLocation.textContent = location;
 
   announcementDetail.append(timestamp, separator, fullTime);
+  logoContainer.append(jobsLogo);
   card.append(
-    announcementLogo,
+    logoContainer,
     announcementDetail,
     announcementTitle,
     announcementAuthor,

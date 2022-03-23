@@ -496,12 +496,20 @@ main {
 
 .announcement-logo {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: -2.5rem;
   width: 5rem;
   height: 5rem;
   border-radius: 15px;
   border: none;
   background-color: #19202d;
+}
+
+.jobs-logo {
+  width: 3.5rem;
+  height: 2.5rem;
 }
 
 .announcement-details {
