@@ -272,6 +272,10 @@ input:checked + .slider:before {
   font-weight: 700;
 }
 
+.time-content-black {
+  color: white;
+}
+
 .vertical {
   margin: -1.6rem;
   margin-left: 2rem;
@@ -282,6 +286,7 @@ input:checked + .slider:before {
 .vertical-black {
   border: 1px solid #6e8098;
   background-color: #6e8098;
+  opacity: 20%;
 }
 
 .search-button {
@@ -380,7 +385,7 @@ input:checked + .slider:before {
   }
 }
 
-.popup-search {
+.modal {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -393,12 +398,16 @@ input:checked + .slider:before {
   z-index: 1000;
 }
 
-.popup-search:target {
+.body-modal {
+  overflow: hidden;
+}
+
+.open-modal {
   visibility: visible;
   opacity: 1;
 }
 
-.popup-search-block {
+.modal-block {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -409,17 +418,42 @@ input:checked + .slider:before {
   border-radius: 5px;
 }
 
-.filter-location {
+.modal-block-black {
+  background-color: #19202d;
+}
+
+.modal-container {
   display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.location-search {
-  size: 2rem;
-  margin: 2rem;
+.modal-location {
+  display: flex;
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
 }
 
-.popup-search-tab {
+.modal-location-logo {
+  margin-right: 1.5rem;
+}
+
+.modal-tab {
+  background-color: white;
   border: none;
+}
+
+.modal-tab-black {
+  background-color: #19202d;
+}
+
+.horizontal {
+  width: 100%;
+  margin-bottom: 2.4rem;
+  border-top: 1px solid #6e8098;
+  opacity: 20%;
 }
 
 .full-time-option {
@@ -427,28 +461,51 @@ input:checked + .slider:before {
   align-items: center;
   margin-left: 1.5rem;
 }
-.popup-checkbox {
+
+.modal-option {
+  font-weight: 700;
+}
+
+.modal-checkbox,
+.time-checkbox {
+  appearance: none;
   height: 2.4rem;
   width: 2.4rem;
-  margin-right: 1em;
-  background-color: #19202d;
+  margin-left: -1.5rem;
+  margin-right: 1.5rem;
   border: none;
   border-radius: 3px;
-}
-
-/* Ne fonctionne pas */
-.popup-checkbox-black {
   background-color: #19202d;
+  opacity: 10%;
 }
 
-.popup-search-button {
-  margin-left: auto;
-  margin-right: auto;
+.modal-checkbox:checked,
+.time-checkbox:checked {
+  opacity: 100%;
+  background-image: url("../images/Checked.png");
+  background-size: contain;
+}
+
+.time-checkbox-black {
+  background-color: white;
+}
+
+.modal-checkbox-black {
+  background-color: white;
+}
+
+.modal-option-black {
+  color: white;
+}
+
+.modal-search-button {
+  margin-top: 2.4rem;
   margin-bottom: 2.4rem;
   border: none;
   border-radius: 5px;
+  align-items: center;
   background-color: #5964e0;
-  padding: 1rem 12rem;
+  padding: 1rem;
   color: white;
 }
 

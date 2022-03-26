@@ -83,6 +83,7 @@ function addCard({
   cardSection.append(card);
 }
 
+// Mettre dans API pour le if 200
 apiListCards((resp) => {
   const object = resp.jobs;
   object.forEach((card) => {
@@ -92,3 +93,8 @@ apiListCards((resp) => {
       alert("Erreur !");
     };
 });
+
+// TODO Rapprocher L'appel d'apiListCard dans api.js
+// Faire en sorte d'en afficher 12 et pas 24
+// Faire la modal
+// Faire fonctionner le bouton load more

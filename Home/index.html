@@ -53,40 +53,46 @@
         </label>
         <div class="vertical"></div>
         <label class="time-option" for="timeOption">
-          <input class="popup-checkbox" type="checkbox" id="timeOption" />
-          <p class="popup-option" id="popupOption">Full Time</p>
+          <input class="time-checkbox" type="checkbox" id="timeCheckbox" />
+          <p class="time-content" id="timeContent">Full Time</p>
         </label>
-        <button href="#popupSearch" class="filter-option">
+        <div class="filter-option" id="filterOption">
           <img src="images/mobile-filter-icon.svg" alt="Filter icon" />
-        </button>
+        </div>
         <button class="search-button" id="searchButton" type="submit">
           <span class="search">Search</span>
         </button>
       </form>
-
-      <!-- Overlay voir W3school pour le faire avec JS -->
-      <!-- TODO voir pour le scroll : class overflow hidden sur body -->
-      <div class="popup-search" id="popupSearch">
-        <div class="popup-search-block">
-          <label class="filter-location" for="locationSearch">
-            <img
-              class="location-search"
-              src="images/icon-location.svg"
-              alt="icon-location"
-            />
-            <input
-              class="popup-search-tab"
-              type="text"
-              placeholder="Filter by location..."
-              id="locationSearch"
-            />
-          </label>
-          <hr />
-          <label class="full-time-option" for="fullTimeOption">
-            <input class="popup-checkbox" type="checkbox" id="fullTimeOption" />
-            <p class="popup-option">Full Time</p>
-          </label>
-          <button class="popup-search-button" type="submit">Search</button>
+      <!-- MODAL -->
+      <div class="modal" id="modal">
+        <div class="modal-block" id="modalBlock">
+          <div class="modal-container">
+            <label class="modal-location" for="locationSearch">
+              <img
+                class="modal-location-logo"
+                src="images/icon-location.svg"
+                alt="icon-location"
+              />
+              <input
+                class="modal-tab"
+                type="text"
+                placeholder="Filter by location..."
+                id="modalTab"
+              />
+            </label>
+          </div>
+          <div class="horizontal"></div>
+          <div class="modal-container">
+            <label class="full-time-option" for="fullTimeOption">
+              <input
+                type="checkbox"
+                class="modal-checkbox"
+                id="modalCheckbox"
+              />
+              <p class="modal-option" id="modalTime">Full Time Only</p>
+            </label>
+            <button class="modal-search-button" type="submit">Search</button>
+          </div>
         </div>
       </div>
 
@@ -99,6 +105,6 @@
     </section>
     <script src="js/api.js"></script>
     <script src="js/dom.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
