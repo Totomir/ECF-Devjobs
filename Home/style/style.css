@@ -247,6 +247,7 @@ input:checked + .slider:before {
 
 .search-tab-black {
   background-color: #19202d;
+  color: white;
 }
 
 .location-img {
@@ -262,6 +263,7 @@ input:checked + .slider:before {
 
 .search-by-location-black {
   background-color: #19202d;
+  color: white;
 }
 
 .time-option {
@@ -447,6 +449,7 @@ input:checked + .slider:before {
 
 .modal-tab-black {
   background-color: #19202d;
+  color: white;
 }
 
 .horizontal {
@@ -583,7 +586,7 @@ main {
   margin-right: 0.5rem;
 }
 
-.separate {
+.separator {
   margin-right: 0.5rem;
 }
 

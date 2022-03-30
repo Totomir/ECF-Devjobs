@@ -1,9 +1,8 @@
-// Fonctionnalité pour passer en mode sombre ou clair
-
+//RECUPERATION DES ELEMENTS HTML
 const switchTheme = document.querySelector("#lightSwitch");
 const body = document.querySelector("body");
 
-// SEARCHBAR
+// Search bar
 const searchBar = document.querySelector("#searchBar");
 const searchTab = document.querySelector("#searchTab");
 const searchByLocation = document.querySelector("#searchByLocation");
@@ -13,13 +12,15 @@ const modalButton = document.querySelector("#filterOption");
 const timeCheckbox = document.querySelector("#timeCheckbox");
 const timeContent = document.querySelector("#timeContent");
 
-// MODAL
+// Modal
 const modal = document.querySelector("#modal");
 const modalBlock = document.querySelector("#modalBlock");
 const modalTab = document.querySelector("#modalTab");
 const modalCheckbox = document.querySelector("#modalCheckbox");
 const modalTime = document.querySelector("#modalTime");
+const modalSearchButton = document.querySelector("#modalSearchButton");
 
+// Fonction permettant de passer en mode sombre
 function switchThemeDark() {
   const jobCard = document.querySelectorAll(".job-card");
   const title = document.querySelectorAll(".announcement-title");
@@ -45,6 +46,7 @@ function switchThemeDark() {
   });
 }
 
+// Fonction permettant de passer en mode clair
 function switchThemeLight() {
   const jobCard = document.querySelectorAll(".job-card");
   const title = document.querySelectorAll(".announcement-title");
@@ -70,6 +72,7 @@ function switchThemeLight() {
   });
 }
 
+// Sauvegarde du paramétrage dans le local storage
 if (localStorage.getItem("theme") !== null) {
   if (localStorage.getItem("theme") === "dark") {
     switchThemeDark();
@@ -81,6 +84,7 @@ if (localStorage.getItem("theme") !== null) {
   localStorage.setItem("theme", "light");
 }
 
+// Mise en application des fonctions sur le toggle switch
 switchTheme.addEventListener("change", function () {
   if (switchTheme.checked) {
     localStorage.setItem("theme", "dark");
@@ -100,10 +104,10 @@ window.addEventListener("resize", function () {
     window.matchMedia("(max-width: 1439px)").matches
   ) {
     searchTab.placeholder = "Filter by title, companies...";
-    fullTimeOption.textContent = "Full Time";
+    timeContent.textContent = "Full Time";
   } else if (window.matchMedia("(min-width: 1440px)").matches) {
     searchTab.placeholder = "Filter by title, companies, expertise...";
-    fullTimeOption.textContent = "Full Time Only";
+    timeContent.textContent = "Full Time Only";
   }
 });
 
@@ -116,3 +120,117 @@ modalBlock.addEventListener("mouseleave", function () {
   modal.classList.remove("open-modal");
   body.classList.remove("body-modal");
 });
+
+// Appel des jobs une première fois
+apiListCards((resp) => {
+  const object = resp.jobs;
+  object.forEach((card) => {
+    offsetJob = offsetJob + 1;
+    addCard(card);
+  }),
+    () => {
+      alert(
+        "Erreur : la liste des jobs n'a pu être récupérée ! Veuillez rééssayer plus tard ou contacter le service information."
+      );
+    };
+});
+
+// Appel des jobs une seconde fois avec gestion du bouton "Load More"
+const loadMore = document.querySelector("#loadMore");
+
+loadMore.addEventListener("click", function () {
+  apiListCards2((resp) => {
+    const object = resp.jobs;
+    if (object.length === 0) {
+      loadMore.textContent = "Vous avez affiché toutes les offres disponibles";
+    }
+    object.forEach((card) => {
+      offsetJob = offsetJob + 1;
+      addCard(card);
+    }),
+      () => {
+        alert(
+          "Erreur : la liste des jobs n'a pu être récupérée ! Veuillez rééssayer plus tard ou contacter le service information."
+        );
+      };
+  });
+});
+
+searchButton.addEventListener("click", function () {
+  if (searchTab.value) {
+    urlText = "&text=" + searchTab.value;
+  } else {
+    urlText = "";
+  }
+  if (searchByLocation.value) {
+    urlJobLocation = "&location=" + searchByLocation.value;
+  } else {
+    urlJobLocation = "";
+  }
+  if (timeCheckbox.checked) {
+    fulltime = "1";
+  } else {
+    fulltime = "0";
+  }
+  cardSection.innerHTML = "";
+  apiSortCards((resp) => {
+    const object = resp.jobs;
+    offsetJob = object.length;
+    if (object.length < 12) {
+      loadMore.textContent = "Vous avez affiché toutes les offres disponibles";
+      loadMore.disabled = true;
+    } else {
+      loadMore.disabled = false;
+      loadMore.textContent = "Load More";
+    }
+    object.forEach((card) => {
+      addCard(card);
+    }),
+      () => {
+        alert(
+          "Erreur : la liste des jobs n'a pu être récupérée ! Veuillez rééssayer plus tard ou contacter le service information."
+        );
+      };
+  });
+});
+
+modalSearchButton.addEventListener("click", function () {
+  if (searchTab.value) {
+    urlText = "&text=" + searchTab.value;
+  } else {
+    urlText = "";
+  }
+  if (modalTab.value) {
+    urlJobLocation = "&location=" + modalTab.value;
+  } else {
+    urlJobLocation = "";
+  }
+  if (modalCheckbox.checked) {
+    fulltime = "1";
+  } else {
+    fulltime = "0";
+  }
+  cardSection.innerHTML = "";
+  apiSortCards((resp) => {
+    const object = resp.jobs;
+    offsetJob = object.length;
+    if (object.length < 12) {
+      loadMore.textContent = "Vous avez affiché toutes les offres disponibles";
+      loadMore.disabled = true;
+    } else {
+      loadMore.disabled = false;
+      loadMore.textContent = "Load More";
+    }
+    object.forEach((card) => {
+      addCard(card);
+    }),
+      () => {
+        alert(
+          "Erreur : la liste des jobs n'a pu être récupérée ! Veuillez rééssayer plus tard ou contacter le service information."
+        );
+      };
+  });
+});
+
+// TODO revoir l'ordre d'affichage, vérifier qu'on a bien la plus récente à la plus ancienne.
+// Faire le search de la modal

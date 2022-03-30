@@ -59,7 +59,7 @@
         <div class="filter-option" id="filterOption">
           <img src="images/mobile-filter-icon.svg" alt="Filter icon" />
         </div>
-        <button class="search-button" id="searchButton" type="submit">
+        <button class="search-button" id="searchButton" type="button">
           <span class="search">Search</span>
         </button>
       </form>
@@ -91,7 +91,13 @@
               />
               <p class="modal-option" id="modalTime">Full Time Only</p>
             </label>
-            <button class="modal-search-button" type="submit">Search</button>
+            <button
+              class="modal-search-button"
+              id="modalSearchButton"
+              type="submit"
+            >
+              Search
+            </button>
           </div>
         </div>
       </div>
@@ -100,7 +106,7 @@
         <!-- TODO voir le focus within pour accessibilité -->
       </main>
       <div class="loading-zone">
-        <button class="load-button" type="submit">Load More</button>
+        <button class="load-button" id="loadMore" type="button">Load More</div>
       </div>
     </section>
     <script src="js/api.js"></script>

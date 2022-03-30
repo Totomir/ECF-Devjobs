@@ -43,7 +43,7 @@ function addCard({
 
   const jobsLogo = document.createElement("img");
   jobsLogo.classList.add("jobs-logo");
-  jobsLogo.src = "images" + logo;
+  jobsLogo.src = "https://ecf-dwwm.cefim-formation.org/" + logo;
 
   const announcementDetail = document.createElement("div");
   announcementDetail.classList.add("announcement-details");
@@ -52,8 +52,9 @@ function addCard({
   timestamp.classList.add("timestamp");
   dateParution(postedAt);
 
-  const separator = document.createElement("p");
+  const separator = document.createElement("span");
   separator.classList.add("separator");
+  separator.textContent = "●";
 
   const fullTime = document.createElement("span");
   fullTime.classList.add("full-time");
@@ -81,20 +82,9 @@ function addCard({
     announcementLocation
   );
   cardSection.append(card);
+
+  if (switchTheme.checked) {
+    card.classList.add("job-card-black");
+    announcementTitle.classList.add("announcement-title-black");
+  }
 }
-
-// Mettre dans API pour le if 200
-apiListCards((resp) => {
-  const object = resp.jobs;
-  object.forEach((card) => {
-    addCard(card);
-  }),
-    () => {
-      alert("Erreur !");
-    };
-});
-
-// TODO Rapprocher L'appel d'apiListCard dans api.js
-// Faire en sorte d'en afficher 12 et pas 24
-// Faire la modal
-// Faire fonctionner le bouton load more
