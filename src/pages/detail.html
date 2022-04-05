@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/reset.css" />
+    <link rel="stylesheet" href="../style/helpers.css" />
+    <link rel="stylesheet" href="../style/font.css" />
+    <link rel="stylesheet" href="../style/detail/style.css" />
+    <title>ECF Front-End</title>
+  </head>
+  <body>
+    <header>
+      <img src="../assets/images/logo.svg" alt="Devjobs logo" class="devjobs" />
+      <div class="light-switch">
+        <img
+          src="../assets/images/sun.svg"
+          alt="Sun icon for switch in light mode"
+        />
+        <label class="switch" for="lightSwitch">
+          <input type="checkbox" id="lightSwitch" />
+          <span class="slider round"></span>
+        </label>
+        <img
+          src="../assets/images/moon.svg"
+          alt="Moon icon for switch in dark mode"
+        />
+      </div>
+    </header>
+    <section class="container">
+      <div class="company-card" id="companyCard">
+        <img
+          class="company-logo"
+          src="../assets/images/pomodoro.svg"
+          alt="company's logo"
+        />
+        <div class="company-name-link">
+          <h2 class="company-name">Scoot</h2>
+          <span class="company-site">scoot.com</span>
+        </div>
+        <button class="company-link" id="companyLink">Company Site</button>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-detail">
+        <h2 class="footer-title">Senior Software Engineer</h2>
+        <span class="footer-company">Scoot</span>
+      </div>
+      <button class="apply-now">Apply Now</button>
+    </footer>
+    <script src="../js/api.js"></script>
+    <script src="../js/dom.js"></script>
+    <script src="../js/detail.js"></script>
+  </body>
+</html>

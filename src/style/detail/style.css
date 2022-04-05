@@ -1,0 +1,419 @@
+/* Typographie */
+
+* {
+  font-family: "Kumbh Sans";
+  color: #6e8098;
+}
+
+h2 {
+  font-size: 20px;
+  color: black;
+}
+
+.h2-black {
+  color: white;
+}
+
+body {
+  background-color: #f4f6f8;
+}
+
+.body-black {
+  background-color: #121721;
+}
+
+/* Container */
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+/* HEADER */
+
+header {
+  min-height: 13.6rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-image: url("../../assets/images/mobile-background-light.svg");
+  margin-bottom: -2rem;
+  padding: 4rem 3rem 3rem 3rem;
+}
+
+.light-switch {
+  max-height: 2.4rem;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+/* Tout écran au dessus de 768px */
+@media screen and (min-width: 48em) {
+  header {
+    min-height: 16rem;
+    margin-bottom: 11rem;
+    background-image: url("../../assets/images/background.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .devjobs {
+    margin-left: 1rem;
+  }
+}
+
+/* Tout écran au dessus de 1024px */
+@media screen and (min-width: 64em) {
+  .devjobs {
+    margin-left: 2rem;
+  }
+}
+
+/* Tout écran au dessus de 1440px */
+@media screen and (min-width: 90em) {
+  .devjobs {
+    margin-left: 14rem;
+  }
+}
+
+/* Création du switch et de son mouvement */
+.switch {
+  width: 4.8rem;
+  height: 2.4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.switch input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  height: 1.4rem;
+  width: 1.4rem;
+  left: 5px;
+  bottom: 5px;
+  background-color: #5964e0;
+  content: "";
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  transform: translateX(23px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider.round:hover::before {
+  background-color: #939bf4;
+}
+
+/* Tout écran au dessus de 768px */
+@media screen and (min-width: 48em) {
+  .light-switch {
+    margin-right: 1rem;
+  }
+}
+
+/* Tout écran au dessus de 1024px */
+@media screen and (min-width: 64em) {
+  .light-switch {
+    margin-right: 2rem;
+  }
+}
+
+/* Tout écran au dessus de 1440px */
+@media screen and (min-width: 90em) {
+  .light-switch {
+    margin-right: 14rem;
+  }
+}
+
+/* JOB INFORMATION */
+.company-card {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.company-card-black {
+  background-color: #19202d;
+}
+
+.company-logo {
+  position: absolute;
+  top: -2.5rem;
+  background-color: orange;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 15px;
+  padding: 0.5rem;
+}
+
+.company-name {
+  margin-top: 5rem;
+}
+
+.company-site {
+  color: #6e8098;
+}
+
+.company-link {
+  margin-top: 2rem;
+  color: #5964e0;
+  font-weight: 700;
+  padding: 1.5rem 2rem 1rem 2rem;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 3rem;
+  background-color: rgba(89, 100, 224, 0.1);
+}
+
+/* Tout écran au dessus de 768px */
+@media screen and (min-width: 48em) {
+  .company-card {
+    position: absolute;
+    top: 12rem;
+    max-width: 73rem;
+    max-height: 14rem;
+    height: 100%;
+    width: 90%;
+    flex-direction: row;
+    justify-content: start;
+  }
+
+  .company-logo {
+    position: relative;
+    width: 14rem;
+    height: 14rem;
+    margin-top: 5rem;
+    margin-right: 4rem;
+    border-radius: 0px 0px 0px 6px;
+    padding: 5.8rem 3rem;
+  }
+
+  .company-name-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 4rem;
+    margin-right: 24rem;
+  }
+
+  .company-link {
+    margin-top: 3.5rem;
+  }
+
+  .company-link-black {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+}
+
+/* Tout écran au dessus de 1024px */
+@media screen and (min-width: 64em) {
+  .company-name-link {
+    margin-right: 28rem;
+  }
+}
+
+.announcement-card {
+  margin-top: 2.4rem;
+  margin-bottom: 6.4rem;
+  background-color: white;
+  border-radius: 6px;
+  padding: 4rem 2.4rem 2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.announcement-card-black {
+  background-color: #19202d;
+}
+
+.posted-time {
+  margin-right: 1rem;
+}
+
+.time-option {
+  margin-left: 1rem;
+}
+
+.announcement-location {
+  color: #5964e0;
+  margin-bottom: 5rem;
+  font-weight: 700;
+}
+
+.apply-button {
+  background-color: #5964e0;
+  color: white;
+  border: none;
+  padding: 1.6rem 9.4rem 1.2rem 9.4rem;
+  border-radius: 6px;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-bottom: 3.2rem;
+  font-weight: 700;
+}
+
+.announcement-description {
+  margin-bottom: 7.4rem;
+}
+
+ul {
+  margin-top: 0rem;
+  margin-bottom: 4rem;
+}
+
+.skills-require {
+  margin-top: 2rem;
+  margin-bottom: 6.4rem;
+}
+
+li {
+  margin-bottom: 1.4rem;
+}
+
+.tasks {
+  margin-top: 2rem;
+}
+
+ol {
+  margin-top: 3.8rem;
+}
+
+li::marker {
+  color: #5964e0;
+}
+
+/* Tout écran au dessus de 768px */
+@media screen and (min-width: 48em) {
+  .announcement-card {
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
+    margin-top: 3rem;
+    max-width: 73rem;
+  }
+
+  .announcement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .job-title {
+    font-size: 28px;
+  }
+
+  .apply-button {
+    padding: 1.7rem 2.8rem 1.1rem 2.8rem;
+    margin-top: 3rem;
+    width: auto;
+    margin-right: 0;
+  }
+}
+
+footer {
+  background-color: white;
+  padding: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-black {
+  background-color: #19202d;
+}
+
+.apply-now {
+  padding: 1.6rem 6.4rem 1.2rem 6.4rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #5964e0;
+  color: white;
+  font-weight: 700;
+  min-width: 32rem;
+}
+
+.space-li {
+  margin-left: 2rem;
+}
+
+/* Tout écran au dessus de 768px */
+@media screen and (min-width: 48em) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .apply-now {
+    min-width: 0px;
+    padding: 1.7rem 2.8rem 1.1rem 2.8rem;
+  }
+}
+
+/* Tout écran au dessus de 1024px */
+@media screen and (min-width: 64em) {
+  footer {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+}
+
+/* Tout écran au dessus de 1440px */
+@media screen and (min-width: 90em) {
+  footer {
+    padding-left: 35rem;
+    padding-right: 35rem;
+  }
+}
+
+/* Tout écran en dessous de 768px */
+@media screen and (max-width: 47.9em) {
+  .footer-title {
+    display: none;
+  }
+
+  .footer-company {
+    display: none;
+  }
+}

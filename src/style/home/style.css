@@ -1,54 +1,4 @@
-/* kumbh-sans-regular - latin */
-@font-face {
-  font-family: "Kumbh Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */
-      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.woff")
-      format("woff"),
-    /* Modern Browsers */
-      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-regular.svg#KumbhSans")
-      format("svg"); /* Legacy iOS */
-}
-
-/* kumbh-sans-700 - latin */
-@font-face {
-  font-family: "Kumbh Sans";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */
-      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.woff")
-      format("woff"),
-    /* Modern Browsers */
-      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../fonts/kumbh-sans-v10-latin/kumbh-sans-v10-latin-700.svg#KumbhSans")
-      format("svg"); /* Legacy iOS */
-}
-
 /* Typographie */
-
-* {
-  font-family: "Kumbh Sans";
-}
 
 body {
   background-color: #f4f6f8;
@@ -73,7 +23,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-image: url("../images/mobile-background-light.svg");
+  background-image: url("../../assets/images/mobile-background-light.svg");
   margin-bottom: 9.5rem;
   padding: 4rem 3rem 3rem 3rem;
 }
@@ -92,7 +42,7 @@ header {
   header {
     min-height: 16rem;
     margin-bottom: 11rem;
-    background-image: url("../images/background.svg");
+    background-image: url("../../assets/images/background.svg");
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -333,7 +283,7 @@ input:checked + .slider:before {
     height: 4.8rem;
     padding: 1.2rem;
     background-color: #5964e0;
-    background-image: url("../images/mobile-icon-search.svg");
+    background-image: url("../../assets/images/mobile-icon-search.svg");
     background-position: center;
     background-repeat: no-repeat;
     border: none;
@@ -387,6 +337,7 @@ input:checked + .slider:before {
   }
 }
 
+/* MODAL */
 .modal {
   position: fixed;
   top: 0;
@@ -485,7 +436,7 @@ input:checked + .slider:before {
 .modal-checkbox:checked,
 .time-checkbox:checked {
   opacity: 100%;
-  background-image: url("../images/Checked.png");
+  background-image: url("../../assets/images/Checked.png");
   background-size: contain;
 }
 
@@ -548,6 +499,10 @@ main {
   border-radius: 5px;
   padding: 3rem;
   padding-top: 5rem;
+}
+
+.job-card:hover {
+  cursor: pointer;
 }
 
 .job-card-black {
@@ -625,5 +580,3 @@ main {
   font-weight: 700;
   color: white;
 }
-
-/* TODO Revoir la font weight si on peut pas la mettre dans la family */

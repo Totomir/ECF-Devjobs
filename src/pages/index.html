@@ -4,29 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/reset.css" />
-    <link rel="stylesheet" href="style/helpers.css" />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="../style/reset.css" />
+    <link rel="stylesheet" href="../style/helpers.css" />
+    <link rel="stylesheet" href="../style/font.css">
+    <link rel="stylesheet" href="../style/home/style.css" />
     <title>ECF Front-End</title>
   </head>
   <body>
     <header>
-      <img src="images/logo.svg" alt="Devjobs logo" class="devjobs" />
+      <img src="../assets/images/logo.svg" alt="Devjobs logo" class="devjobs" />
       <div class="light-switch">
-        <img src="images/sun.svg" alt="Sun icon for switch in light mode" />
+        <img src="../assets/images/sun.svg" alt="Sun icon for switch in light mode" />
         <label class="switch" for="lightSwitch">
           <input type="checkbox" id="lightSwitch" />
           <span class="slider round"></span>
         </label>
-        <img src="images/moon.svg" alt="Moon icon for switch in dark mode" />
+        <img src="../assets/images/moon.svg" alt="Moon icon for switch in dark mode" />
       </div>
     </header>
     <section class="container">
-      <!-- TODO revoir le bouton et les champs avec le responsive, voir mettre 3 div à la places des box qui s'empillent -->
       <form class="search-bar" id="searchBar">
         <label class="search-zone" for="searchTab">
           <img
-            src="images/icon-search.svg"
+            src="../assets/images/icon-search.svg"
             alt="Search icon"
             class="search-icon"
           />
@@ -40,7 +40,7 @@
         <div class="vertical"></div>
         <label class="search-zone" for="searchByLocation">
           <img
-            src="images/icon-location.svg"
+            src="../assets/images/icon-location.svg"
             alt="Location icon"
             class="location-img"
           />
@@ -57,7 +57,7 @@
           <p class="time-content" id="timeContent">Full Time</p>
         </label>
         <div class="filter-option" id="filterOption">
-          <img src="images/mobile-filter-icon.svg" alt="Filter icon" />
+          <img src="../assets/images/mobile-filter-icon.svg" alt="Filter icon" />
         </div>
         <button class="search-button" id="searchButton" type="button">
           <span class="search">Search</span>
@@ -70,7 +70,7 @@
             <label class="modal-location" for="locationSearch">
               <img
                 class="modal-location-logo"
-                src="images/icon-location.svg"
+                src="../assets/images/icon-location.svg"
                 alt="icon-location"
               />
               <input
@@ -109,8 +109,11 @@
         <button class="load-button" id="loadMore" type="button">Load More</div>
       </div>
     </section>
-    <script src="js/api.js"></script>
-    <script src="js/dom.js"></script>
-    <script src="js/script.js"></script>
+    <!-- Revoir les imports JS avec la centralisation si possible -->
+    <script src="../js/api.js"></script>
+    <script src="../js/dom.js"></script>
+    <script src="../js/home.js"></script>
   </body>
 </html>
+
+<!-- Inverser Main et section, le section va dans le main -->

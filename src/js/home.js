@@ -54,7 +54,7 @@ function switchThemeLight() {
   searchBar.classList.remove("search-bar-black");
   searchTab.classList.remove("search-tab-black");
   vertical.forEach((ligne) => {
-    ligne.classList.add("vertical-black");
+    ligne.classList.remove("vertical-black");
   });
   searchByLocation.classList.remove("search-by-location-black");
   modalButton.classList.remove("filter-option-black");
@@ -124,9 +124,9 @@ modalBlock.addEventListener("mouseleave", function () {
 // Appel des jobs une première fois
 apiListCards((resp) => {
   const object = resp.jobs;
-  object.forEach((card) => {
+  object.forEach((card, index) => {
     offsetJob = offsetJob + 1;
-    addCard(card);
+    addCard(card, object[index].id);
   }),
     () => {
       alert(
@@ -144,9 +144,9 @@ loadMore.addEventListener("click", function () {
     if (object.length === 0) {
       loadMore.textContent = "Vous avez affiché toutes les offres disponibles";
     }
-    object.forEach((card) => {
+    object.forEach((card, index) => {
       offsetJob = offsetJob + 1;
-      addCard(card);
+      addCard(card, object[index].id);
     }),
       () => {
         alert(
@@ -233,4 +233,4 @@ modalSearchButton.addEventListener("click", function () {
 });
 
 // TODO revoir l'ordre d'affichage, vérifier qu'on a bien la plus récente à la plus ancienne.
-// Faire le search de la modal
+// TODO window.location.href pour le lien entre les pages
