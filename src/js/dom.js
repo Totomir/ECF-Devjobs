@@ -91,6 +91,7 @@ const section = document.querySelector("section");
 
 function showDetail({
   logo,
+  logoBackground,
   company,
   website,
   apply,
@@ -132,6 +133,7 @@ function showDetail({
   const companyLogo = document.createElement("img");
   companyLogo.classList.add("company-logo");
   companyLogo.src = "https://ecf-dwwm.cefim-formation.org/" + logo;
+  companyLogo.style.backgroundColor = logoBackground;
 
   const companyNameLink = document.createElement("div");
   companyNameLink.classList.add("company-name-link");
@@ -147,7 +149,7 @@ function showDetail({
   const companyLink = document.createElement("button");
   companyLink.classList.add("company-link");
   companyLink.textContent = "Company Site";
-  companyLink.href = website;
+  companyLink.setAttribute("href", apply);
 
   const announcementCard = document.createElement("div");
   announcementCard.classList.add("announcement-card");
@@ -230,7 +232,7 @@ function showDetail({
     tasksList.append(tasksElements);
   });
 
-  companyNameLink.append(companyName, companyLink);
+  companyNameLink.append(companyName, companySite);
   companyCard.append(companyLogo, companyNameLink, companyLink);
 
   announcementDetail.append(postedTime, separator, timeOption);
@@ -251,7 +253,13 @@ function showDetail({
   section.append(companyCard, announcementCard);
 
   if (switchTheme.checked) {
+    companyCard.classList.add("company-card-black");
     announcementCard.classList.add("announcement-card-black");
+    companyLink.classList.add("company-link-black");
+    companyName.classList.add("h2-black");
+    jobTitle.classList.add("h2-black");
+    require.classList.add("h2-black");
+    futurTasks.classList.add("h2-black");
   }
 }
 

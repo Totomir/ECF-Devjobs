@@ -1,10 +1,14 @@
 const switchTheme = document.querySelector("#lightSwitch");
 
 const body = document.querySelector("body");
-const companyCard = document.querySelector("#companyCard");
-const companyLink = document.querySelector("#companyLink");
-const cardTitle = document.querySelectorAll("h2");
 const footer = document.querySelector("footer");
+const footerTitle = document.querySelector(".footer-title");
+
+// Retour au home
+const backHome = document.querySelector(".devjobs");
+backHome.addEventListener("click", function () {
+  window.location.href = "index.html";
+});
 
 apiDetail((resp) => {
   const object = resp;
@@ -20,32 +24,43 @@ apiDetail((resp) => {
 // Fonction permettant de passer en mode sombre
 function switchThemeDark() {
   const announcementCard = document.querySelector(".announcement-card");
-  if (announcementCard) {
-    announcementCard.classList.add("announcement-card-black");
-  }
+  const companyCard = document.querySelector(".company-card");
+  const companyLink = document.querySelector(".company-link");
+  const cardTitle = document.querySelectorAll("h2");
   body.classList.add("body-black");
-  companyCard.classList.add("company-card-black");
-  companyLink.classList.add("company-link-black");
-  cardTitle.forEach((title) => {
-    title.classList.add("h2-black");
-  });
+
+  if (companyCard) {
+    announcementCard.classList.add("announcement-card-black");
+    companyCard.classList.add("company-card-black");
+    companyLink.classList.add("company-link-black");
+    cardTitle.forEach((title) => {
+      title.classList.add("h2-black");
+    });
+  }
+
   footer.classList.add("footer-black");
+  footerTitle.classList.add("footer-title-black");
 }
 
 // Fonction permettant de passer en mode clair
 function switchThemeLight() {
   const announcementCard = document.querySelector(".announcement-card");
-  if (announcementCard) {
-    announcementCard.classList.remove("announcement-card-black");
-  }
+  const companyCard = document.querySelector(".company-card");
+  const companyLink = document.querySelector(".company-link");
+  const cardTitle = document.querySelectorAll("h2");
   body.classList.remove("body-black");
-  companyCard.classList.remove("company-card-black");
-  companyLink.classList.remove("company-link-black");
 
-  cardTitle.forEach((title) => {
-    title.classList.remove("h2-black");
-  });
+  if (companyCard) {
+    announcementCard.classList.remove("announcement-card-black");
+    companyCard.classList.remove("company-card-black");
+    companyLink.classList.remove("company-link-black");
+    cardTitle.forEach((title) => {
+      title.classList.remove("h2-black");
+    });
+  }
+
   footer.classList.remove("footer-black");
+  footerTitle.classList.remove("footer-title-black");
 }
 
 // Mise en application des fonctions sur le toggle switch

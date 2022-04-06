@@ -55,6 +55,10 @@ header {
   margin-top: 0.25rem;
 }
 
+.devjobs {
+  cursor: pointer;
+}
+
 /* Tout écran au dessus de 768px */
 @media screen and (min-width: 48em) {
   header {
@@ -175,16 +179,25 @@ input:checked + .slider:before {
 
 .company-logo {
   position: absolute;
+  object-fit: contain;
   top: -2.5rem;
-  background-color: orange;
   width: 5rem;
   height: 5rem;
   border-radius: 15px;
   padding: 0.5rem;
 }
 
+.company-name-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 28rem;
+}
+
 .company-name {
   margin-top: 5rem;
+  width: 100%;
+  text-align: center;
 }
 
 .company-site {
@@ -229,24 +242,30 @@ input:checked + .slider:before {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     margin-bottom: 4rem;
-    margin-right: 24rem;
+    margin-right: 8rem;
   }
 
   .company-link {
     margin-top: 3.5rem;
+    margin-right: 4rem;
   }
 
   .company-link-black {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
   }
+
+  .company-name {
+    text-align: start;
+  }
 }
 
 /* Tout écran au dessus de 1024px */
 @media screen and (min-width: 64em) {
   .company-name-link {
-    margin-right: 28rem;
+    margin-right: 11rem;
   }
 }
 
@@ -358,8 +377,20 @@ footer {
   align-items: center;
 }
 
+.footer-container {
+  width: 100%;
+  max-width: 73rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .footer-black {
   background-color: #19202d;
+}
+
+.footer-title-black {
+  color: white;
 }
 
 .apply-now {
@@ -378,32 +409,16 @@ footer {
 
 /* Tout écran au dessus de 768px */
 @media screen and (min-width: 48em) {
-  footer {
-    display: flex;
+  .footer-container {
     justify-content: space-between;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .apply-now {
     min-width: 0px;
     padding: 1.7rem 2.8rem 1.1rem 2.8rem;
-  }
-}
-
-/* Tout écran au dessus de 1024px */
-@media screen and (min-width: 64em) {
-  footer {
-    padding-left: 15rem;
-    padding-right: 15rem;
-  }
-}
-
-/* Tout écran au dessus de 1440px */
-@media screen and (min-width: 90em) {
-  footer {
-    padding-left: 35rem;
-    padding-right: 35rem;
   }
 }
 
