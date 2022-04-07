@@ -191,7 +191,7 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 28rem;
+  min-width: 25rem;
 }
 
 .company-name {
@@ -239,6 +239,7 @@ input:checked + .slider:before {
   }
 
   .company-name-link {
+    min-width: 24rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -316,6 +317,7 @@ input:checked + .slider:before {
 }
 
 ul {
+  margin-left: -2rem;
   margin-top: 0rem;
   margin-bottom: 4rem;
 }
@@ -327,6 +329,7 @@ ul {
 
 li {
   margin-bottom: 1.4rem;
+  padding-left: 3rem;
 }
 
 .tasks {
@@ -334,11 +337,14 @@ li {
 }
 
 ol {
+  margin-left: -2rem;
   margin-top: 3.8rem;
+  list-style-type: decimal;
 }
 
 li::marker {
   color: #5964e0;
+  font-weight: 700;
 }
 
 /* Tout écran au dessus de 768px */
@@ -401,10 +407,6 @@ footer {
   color: white;
   font-weight: 700;
   min-width: 32rem;
-}
-
-.space-li {
-  margin-left: 2rem;
 }
 
 /* Tout écran au dessus de 768px */

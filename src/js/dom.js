@@ -205,6 +205,8 @@ function showDetail({
 
   requirements.items.forEach((element) => {
     requirementsItems = document.createElement("li");
+    requirementsItems.classList.add("li-element");
+
     items = document.createElement("span");
     items.classList.add("space-li");
     items.textContent = element;
@@ -225,6 +227,7 @@ function showDetail({
   let tasks;
   role.items.forEach((element) => {
     tasksElements = document.createElement("li");
+    tasksElements.classList.add("li-element");
     tasks = document.createElement("span");
     tasks.classList.add("space-li");
     tasks.textContent = element;
