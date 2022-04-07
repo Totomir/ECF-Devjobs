@@ -121,25 +121,25 @@ modalBlock.addEventListener("mouseleave", function () {
   body.classList.remove("body-modal");
 });
 
+addLoader();
+
 // Appel des jobs une première fois
 apiListCards((resp) => {
   const object = resp.jobs;
+  removeLoader();
   object.forEach((card, index) => {
     offsetJob = offsetJob + 1;
     addCard(card, object[index].id);
-  }),
-    () => {
-      alert(
-        "Erreur : la liste des jobs n'a pu être récupérée ! Veuillez rééssayer plus tard ou contacter le service information."
-      );
-    };
+  });
 });
 
 // Appel des jobs une seconde fois avec gestion du bouton "Load More"
 const loadMore = document.querySelector("#loadMore");
 
 loadMore.addEventListener("click", function () {
+  addLoader();
   apiListCards2((resp) => {
+    removeLoader();
     const object = resp.jobs;
     if (object.length === 0) {
       loadMore.textContent = "Vous avez affiché toutes les offres disponibles";
@@ -157,6 +157,7 @@ loadMore.addEventListener("click", function () {
 });
 
 searchButton.addEventListener("click", function () {
+  addLoader();
   if (searchTab.value) {
     urlText = "&text=" + searchTab.value;
   } else {
@@ -173,7 +174,10 @@ searchButton.addEventListener("click", function () {
     fulltime = "0";
   }
   cardSection.innerHTML = "";
+  addLoader();
+
   apiSortCards((resp) => {
+    removeLoader();
     const object = resp.jobs;
     offsetJob = object.length;
     if (object.length < 12) {
@@ -231,6 +235,3 @@ modalSearchButton.addEventListener("click", function () {
       };
   });
 });
-
-// TODO revoir l'ordre d'affichage, vérifier qu'on a bien la plus récente à la plus ancienne.
-// TODO window.location.href pour le lien entre les pages

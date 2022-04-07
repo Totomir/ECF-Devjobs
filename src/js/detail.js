@@ -9,8 +9,9 @@ const backHome = document.querySelector(".devjobs");
 backHome.addEventListener("click", function () {
   window.location.href = "index.html";
 });
-
+addLoader();
 apiDetail((resp) => {
+  removeLoader();
   const object = resp;
   console.log(object);
   showDetail(object);

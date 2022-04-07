@@ -15,8 +15,14 @@ function apiListCards(onSuccess = () => {}, onError = () => {}) {
       if (request.status === 200) {
         const response = JSON.parse(request.responseText);
         onSuccess(response);
+      } else if (request.status >= 400 && request.status < 500) {
+        alert(
+          "Erreur : la requête effectuée n'est pas attribuée, veuillez recommencer en modifiant votre requête."
+        );
       } else {
-        onError();
+        alert(
+          "Erreur : la liste des postes n'a pu être récupérée ! Veuillez réessayer plus tard ou contacter le service informatique."
+        );
       }
     }
   });
@@ -35,8 +41,14 @@ function apiListCards2(onSuccess = () => {}, onError = () => {}) {
       if (request.status === 200) {
         const response = JSON.parse(request.responseText);
         onSuccess(response);
+      } else if (request.status >= 400 && request.status < 500) {
+        alert(
+          "Erreur : la requête effectuée n'est pas attribuée, veuillez recommencer en modifiant votre requête."
+        );
       } else {
-        onError();
+        alert(
+          "Erreur : la liste des postes n'a pu être récupérée ! Veuillez réessayer plus tard ou contacter le service informatique."
+        );
       }
     }
   });
@@ -59,8 +71,14 @@ function apiSortCards(onSuccess = () => {}, onError = () => {}) {
       if (request.status === 200) {
         const response = JSON.parse(request.responseText);
         onSuccess(response);
+      } else if (request.status >= 400 && request.status < 500) {
+        alert(
+          "Erreur : la requête effectuée n'est pas attribuée, veuillez recommencer en modifiant votre requête."
+        );
       } else {
-        onError();
+        alert(
+          "Erreur : le filtrage des postes n'a pu être réalisé ! Veuillez réessayer plus tard ou contacter le service informatique."
+        );
       }
     }
   });
@@ -80,8 +98,14 @@ function apiDetail(onSuccess = () => {}, onError = () => {}) {
       if (request.status === 200) {
         const response = JSON.parse(request.responseText);
         onSuccess(response);
+      } else if (request.status === 400) {
+        alert(
+          "Erreur : la requête effectuée n'est pas attribuée, veuillez recommencer en modifiant votre requête."
+        );
       } else {
-        onError();
+        alert(
+          "Erreur : le détail du poste n'a pu être récupéré ! Veuillez réessayer plus tard ou contacter le service informatique."
+        );
       }
     }
   });

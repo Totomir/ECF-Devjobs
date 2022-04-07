@@ -1,4 +1,4 @@
-const cardSection = document.querySelector("main");
+const cardSection = document.querySelector("section");
 
 function addCard(
   { company, contract, location, logo, logoBackground, position, postedAt },
@@ -149,7 +149,10 @@ function showDetail({
   const companyLink = document.createElement("button");
   companyLink.classList.add("company-link");
   companyLink.textContent = "Company Site";
-  companyLink.setAttribute("href", apply);
+  companyLink.setAttribute("href", website);
+  companyLink.addEventListener("click", function () {
+    window.location.href = website;
+  });
 
   const announcementCard = document.createElement("div");
   announcementCard.classList.add("announcement-card");
@@ -186,6 +189,9 @@ function showDetail({
   applyButton.classList.add("apply-button");
   applyButton.textContent = "Apply Now";
   applyButton.setAttribute("href", apply);
+  applyButton.addEventListener("click", function () {
+    window.location.href = apply;
+  });
 
   const announcementDescription = document.createElement("p");
   announcementDescription.classList.add("announcement-description");
@@ -235,6 +241,12 @@ function showDetail({
     tasksList.append(tasksElements);
   });
 
+  // Gestion boutons footer
+  const footerButton = document.querySelector(".apply-now");
+  footerButton.addEventListener("click", function () {
+    window.location.href = apply;
+  });
+
   companyNameLink.append(companyName, companySite);
   companyCard.append(companyLogo, companyNameLink, companyLink);
 
@@ -266,5 +278,26 @@ function showDetail({
   }
 }
 
+// Ajout loader
+const ring = document.createElement("div");
+
+const ringChild1 = document.createElement("div");
+const ringChild2 = document.createElement("div");
+const ringChild3 = document.createElement("div");
+const ringChild4 = document.createElement("div");
+
+function addLoader() {
+  ring.classList.add("lds-ring");
+  ring.append(ringChild1, ringChild2, ringChild3, ringChild4);
+  cardSection.append(ring);
+}
+
+function removeLoader() {
+  ring.remove();
+  ringChild1.remove();
+  ringChild2.remove();
+  ringChild3.remove();
+  ringChild4.remove();
+}
 // Revoir les liens et les bug de mises en forme sur le détail
 // Revoir chaque page, faire des commentaires, aerer le code ...
