@@ -4,29 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style/reset.css" />
-    <link rel="stylesheet" href="../style/helpers.css" />
-    <link rel="stylesheet" href="../style/font.css">
-    <link rel="stylesheet" href="../style/home/style.css" />
-    <title>ECF Front-End</title>
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/helpers.css" />
+    <link rel="stylesheet" href="style/font.css" />
+    <link rel="stylesheet" href="style/home/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+
+    <title>Devjobs</title>
   </head>
   <body>
     <header>
-      <img src="../assets/images/logo.svg" alt="Devjobs logo" class="devjobs" />
+      <img src="assets/images/logo.svg" alt="Devjobs logo" class="devjobs" />
       <div class="light-switch">
-        <img src="../assets/images/sun.svg" alt="Sun icon for switch in light mode" />
+        <img
+          src="assets/images/sun.svg"
+          alt="Sun icon for switch in light mode"
+        />
         <label class="switch" for="lightSwitch">
           <input type="checkbox" id="lightSwitch" />
           <span class="slider round"></span>
         </label>
-        <img src="../assets/images/moon.svg" alt="Moon icon for switch in dark mode" />
+        <img
+          src="assets/images/moon.svg"
+          alt="Moon icon for switch in dark mode"
+        />
       </div>
     </header>
+
     <main class="container">
+      <!-- Création de la Search Bar -->
       <form class="search-bar" id="searchBar">
         <label class="search-zone" for="searchTab">
           <img
-            src="../assets/images/icon-search.svg"
+            src="assets/images/icon-search.svg"
             alt="Search icon"
             class="search-icon"
           />
@@ -40,7 +55,7 @@
         <div class="vertical"></div>
         <label class="search-zone" for="searchByLocation">
           <img
-            src="../assets/images/icon-location.svg"
+            src="assets/images/icon-location.svg"
             alt="Location icon"
             class="location-img"
           />
@@ -57,20 +72,21 @@
           <p class="time-content" id="timeContent">Full Time</p>
         </label>
         <div class="filter-option" id="filterOption">
-          <img src="../assets/images/mobile-filter-icon.svg" alt="Filter icon" />
+          <img src="assets/images/mobile-filter-icon.svg" alt="Filter icon" />
         </div>
         <button class="search-button" id="searchButton" type="button">
           <span class="search">Search</span>
         </button>
       </form>
-      <!-- MODAL -->
+
+      <!-- Création de la modal -->
       <div class="modal" id="modal">
         <div class="modal-block" id="modalBlock">
           <div class="modal-container">
             <label class="modal-location" for="locationSearch">
               <img
                 class="modal-location-logo"
-                src="../assets/images/icon-location.svg"
+                src="assets/images/icon-location.svg"
                 alt="icon-location"
               />
               <input
@@ -102,16 +118,18 @@
         </div>
       </div>
 
-      <section>
-      </section>
+      <!-- Section où apparaitront les cards -->
+      <section></section>
+
       <div class="loading-zone">
-        <button class="load-button" id="loadMore" type="button">Load More</div>
+        <button class="load-button" id="loadMore" type="button">
+          Load More
+        </button>
       </div>
     </main>
-    <script src="../js/api.js"></script>
-    <script src="../js/dom.js"></script>
-    <script src="../js/home.js"></script>
+
+    <script src="js/api.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/home.js"></script>
   </body>
 </html>
-
-<!-- TODO Inverser Main et section, le section va dans le main -->

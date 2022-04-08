@@ -1,12 +1,11 @@
-// API récupération des jobs
 let offsetJob = 0;
-let jobId = 0;
 let urlText = "";
 let urlJobLocation = "";
 let fulltime = "0";
 let urlJob = "";
 let idInUrl = document.location.href.slice(47);
 
+// API récupération des jobs
 function apiListCards(onSuccess = () => {}, onError = () => {}) {
   const request = new XMLHttpRequest();
   request.open("GET", "https://ecf-dwwm.cefim-formation.org/api/jobs");

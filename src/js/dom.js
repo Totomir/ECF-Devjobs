@@ -1,9 +1,11 @@
+// Création des cards dans la section pour la Home Page
 const cardSection = document.querySelector("section");
 
 function addCard(
   { company, contract, location, logo, logoBackground, position, postedAt },
   idClick = 1
 ) {
+  // Fonction de traitement du timestamp pour le convertir en données numériques
   function dateParution(postedAt) {
     const date = new Date(postedAt);
 
@@ -29,12 +31,20 @@ function addCard(
     }
   }
 
+  // Création des cards et de leurs liens
   const card = document.createElement("article");
   card.classList.add("job-card");
+  card.tabIndex = "0";
   card.addEventListener("click", function () {
-    window.location.href = "detail.html?id=" + idClick;
+    window.location.href = "pages/detail.html?id=" + idClick;
+  });
+  card.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {
+      window.location.href = "pages/detail.html?id=" + idClick;
+    }
   });
 
+  // Ajout du logo
   const logoContainer = document.createElement("div");
   logoContainer.classList.add("announcement-logo");
   logoContainer.style.backgroundColor = logoBackground;
@@ -43,6 +53,7 @@ function addCard(
   jobsLogo.classList.add("jobs-logo");
   jobsLogo.src = "https://ecf-dwwm.cefim-formation.org/" + logo;
 
+  // Ajout des détails
   const announcementDetail = document.createElement("div");
   announcementDetail.classList.add("announcement-details");
 
@@ -58,18 +69,22 @@ function addCard(
   fullTime.classList.add("full-time");
   fullTime.textContent = contract;
 
+  // Ajout du titre
   const announcementTitle = document.createElement("h2");
   announcementTitle.classList.add("announcement-title");
   announcementTitle.textContent = position;
 
+  // Ajout de l'autheur de l'annonce
   const announcementAuthor = document.createElement("span");
   announcementAuthor.classList.add("announcement-author");
   announcementAuthor.textContent = company;
 
+  // Ajout de la localisation
   const announcementLocation = document.createElement("div");
   announcementLocation.classList.add("announcement-location");
   announcementLocation.textContent = location;
 
+  // Assemblage des éléments
   announcementDetail.append(timestamp, separator, fullTime);
   logoContainer.append(jobsLogo);
   card.append(
@@ -81,12 +96,14 @@ function addCard(
   );
   cardSection.append(card);
 
+  // Gestion du thème sombre pour les nouveaux éléments
   if (switchTheme.checked) {
     card.classList.add("job-card-black");
     announcementTitle.classList.add("announcement-title-black");
   }
 }
 
+// Création de la section de la page détail
 const section = document.querySelector("section");
 
 function showDetail({
@@ -103,6 +120,7 @@ function showDetail({
   requirements,
   role,
 }) {
+  // Reprise de la fonction de traitement du timestamp
   function dateParution(postedAt) {
     const date = new Date(postedAt);
 
@@ -127,14 +145,18 @@ function showDetail({
       postedTime.textContent = annee + "y ago";
     }
   }
+
+  // Création de la card de l'entreprise
   const companyCard = document.createElement("div");
   companyCard.classList.add("company-card");
 
+  // Ajout du logo
   const companyLogo = document.createElement("img");
   companyLogo.classList.add("company-logo");
   companyLogo.src = "https://ecf-dwwm.cefim-formation.org/" + logo;
   companyLogo.style.backgroundColor = logoBackground;
 
+  // Ajout des détails
   const companyNameLink = document.createElement("div");
   companyNameLink.classList.add("company-name-link");
 
@@ -146,6 +168,7 @@ function showDetail({
   companySite.classList.add("company-site");
   companySite.textContent = website;
 
+  // Ajout du bouton pour le site de l'entreprise
   const companyLink = document.createElement("button");
   companyLink.classList.add("company-link");
   companyLink.textContent = "Company Site";
@@ -154,6 +177,7 @@ function showDetail({
     window.location.href = website;
   });
 
+  // Création de la page de détail de l'offre
   const announcementCard = document.createElement("div");
   announcementCard.classList.add("announcement-card");
 
@@ -163,6 +187,7 @@ function showDetail({
   const announcementInfos = document.createElement("div");
   announcementInfos.classList.add("announcement-infos");
 
+  // Ajout des détails sur l'offre
   const announcementDetail = document.createElement("div");
   announcementDetail.classList.add("announcement-detail");
 
@@ -177,14 +202,17 @@ function showDetail({
   timeOption.classList.add("time-option");
   timeOption.textContent = contract;
 
+  // Ajout du titre du poste
   const jobTitle = document.createElement("h2");
   jobTitle.classList.add("job-title");
   jobTitle.textContent = position;
 
+  // Ajout de la localisation
   const announcementLocation = document.createElement("span");
   announcementLocation.classList.add("announcement-location");
   announcementLocation.textContent = location;
 
+  // Ajout du bouton pour postuler
   const applyButton = document.createElement("button");
   applyButton.classList.add("apply-button");
   applyButton.textContent = "Apply Now";
@@ -193,10 +221,12 @@ function showDetail({
     window.location.href = apply;
   });
 
+  // Ajout d'une description du poste'
   const announcementDescription = document.createElement("p");
   announcementDescription.classList.add("announcement-description");
   announcementDescription.textContent = description;
 
+  // Ajout des critères requis
   const require = document.createElement("h2");
   require.textContent = "Requirements";
 
@@ -220,6 +250,7 @@ function showDetail({
     requirementsList.append(requirementsItems);
   });
 
+  // Ajout des futurs tâches
   const futurTasks = document.createElement("h2");
   futurTasks.textContent = "What You Will Do";
 
@@ -241,12 +272,13 @@ function showDetail({
     tasksList.append(tasksElements);
   });
 
-  // Gestion boutons footer
+  // Création du bouton footer
   const footerButton = document.querySelector(".apply-now");
   footerButton.addEventListener("click", function () {
     window.location.href = apply;
   });
 
+  // Assemblage
   companyNameLink.append(companyName, companySite);
   companyCard.append(companyLogo, companyNameLink, companyLink);
 
@@ -267,6 +299,7 @@ function showDetail({
 
   section.append(companyCard, announcementCard);
 
+  // Gestion du thème sombre pour les nouveaux éléments
   if (switchTheme.checked) {
     companyCard.classList.add("company-card-black");
     announcementCard.classList.add("announcement-card-black");
@@ -280,7 +313,6 @@ function showDetail({
 
 // Ajout loader
 const ring = document.createElement("div");
-
 const ringChild1 = document.createElement("div");
 const ringChild2 = document.createElement("div");
 const ringChild3 = document.createElement("div");

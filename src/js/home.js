@@ -121,9 +121,8 @@ modalBlock.addEventListener("mouseleave", function () {
   body.classList.remove("body-modal");
 });
 
-addLoader();
-
 // Appel des jobs une première fois
+addLoader();
 apiListCards((resp) => {
   const object = resp.jobs;
   removeLoader();
@@ -135,7 +134,6 @@ apiListCards((resp) => {
 
 // Appel des jobs une seconde fois avec gestion du bouton "Load More"
 const loadMore = document.querySelector("#loadMore");
-
 loadMore.addEventListener("click", function () {
   addLoader();
   apiListCards2((resp) => {
@@ -156,8 +154,8 @@ loadMore.addEventListener("click", function () {
   });
 });
 
+// Filtrage des offres avec la search bar
 searchButton.addEventListener("click", function () {
-  addLoader();
   if (searchTab.value) {
     urlText = "&text=" + searchTab.value;
   } else {
@@ -174,8 +172,8 @@ searchButton.addEventListener("click", function () {
     fulltime = "0";
   }
   cardSection.innerHTML = "";
-  addLoader();
 
+  addLoader();
   apiSortCards((resp) => {
     removeLoader();
     const object = resp.jobs;
@@ -198,6 +196,7 @@ searchButton.addEventListener("click", function () {
   });
 });
 
+// Filtrage des offres avec la modal
 modalSearchButton.addEventListener("click", function () {
   if (searchTab.value) {
     urlText = "&text=" + searchTab.value;

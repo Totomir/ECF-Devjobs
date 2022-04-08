@@ -1,5 +1,4 @@
 const switchTheme = document.querySelector("#lightSwitch");
-
 const body = document.querySelector("body");
 const footer = document.querySelector("footer");
 const footerTitle = document.querySelector(".footer-title");
@@ -7,7 +6,7 @@ const footerTitle = document.querySelector(".footer-title");
 // Retour au home
 const backHome = document.querySelector(".devjobs");
 backHome.addEventListener("click", function () {
-  window.location.href = "index.html";
+  window.location.href = "../index.html";
 });
 addLoader();
 apiDetail((resp) => {

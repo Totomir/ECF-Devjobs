@@ -1,5 +1,4 @@
-/* Typographie */
-
+/* TYPOGRAPHIE */
 body {
   background-color: #f4f6f8;
 }
@@ -8,15 +7,14 @@ body {
   background-color: #121721;
 }
 
-/* Container */
-
+/* CONTAINER */
 .container {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
-/* HEADER */
 
+/* HEADER */
 header {
   min-height: 13.6rem;
   position: relative;
@@ -140,7 +138,6 @@ input:checked + .slider:before {
 }
 
 /* SEARCH BAR */
-
 .search-bar {
   width: 90%;
   position: absolute;
@@ -472,8 +469,7 @@ input:checked + .slider:before {
   color: white;
 }
 
-/* Main */
-
+/* SECTION */
 .lds-ring {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -538,7 +534,6 @@ section {
 }
 
 /* CARDS */
-
 .job-card {
   position: relative;
   min-width: 100%;
@@ -546,6 +541,10 @@ section {
   border-radius: 5px;
   padding: 3rem;
   padding-top: 5rem;
+}
+
+.job-card:focus {
+  outline: 2px solid red;
 }
 
 .job-card:hover {
