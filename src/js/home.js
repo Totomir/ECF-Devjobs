@@ -120,6 +120,10 @@ modalBlock.addEventListener("mouseleave", function () {
   modal.classList.remove("open-modal");
   body.classList.remove("body-modal");
 });
+modalSearchButton.addEventListener("click", function () {
+  modal.classList.remove("open-modal");
+  body.classList.remove("body-modal");
+});
 
 // Appel des jobs une première fois
 addLoader();
