@@ -12,7 +12,6 @@ addLoader();
 apiDetail((resp) => {
   removeLoader();
   const object = resp;
-  console.log(object);
   showDetail(object);
   () => {
     alert(
