@@ -3,7 +3,7 @@ let urlText = "";
 let urlJobLocation = "";
 let fulltime = "0";
 let urlJob = "";
-let idInUrl = document.location.href.slice(57);
+let idInUrl = document.location.href.slice(56);
 
 // API récupération des jobs
 function apiListCards(onSuccess = () => {}, onError = () => {}) {
